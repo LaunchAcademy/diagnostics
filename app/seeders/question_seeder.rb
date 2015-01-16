@@ -7,18 +7,10 @@ class QuestionSeeder
   end
 
   def seed!
-    questions_data["questions"].each do |question_data|
-      question = Question.find_or_create_by(query: question_data["question"])
+    questions_data.each do |query, answers_data|
+      Question.find_or_create_by(query: query)
 
-      question_data["answers"].each do |answer|
-        content = nil
-        correct = nil
-        if content = answer["correct_answer"]
-          correct = true
-        elsif content = answer["wrong_answer"]
-          correct = false
-        end
-
+      answers_data.each do |content|
         answer = Answer.find_or_create_by(content: content)
         answer.save!
       end
