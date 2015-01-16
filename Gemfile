@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'launchy'
+  gem 'factory_girl_rails', '~> 4.0'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'pry-rails'
