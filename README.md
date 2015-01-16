@@ -1,3 +1,5 @@
+[ER Diagram]("ER Diagram")
+
 ## User Stories
 ### Instructor Inputs a Question
 
