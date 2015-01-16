@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "create an answer" do
+feature "Instructor Creates an Answer" do
 
   let(:question) { FactoryGirl.create(:question) }
 
