@@ -11,12 +11,11 @@ class QuestionSeeder
       question = Question.find_or_create_by!(query: query)
 
       answers_data.each do |content|
-        answer = Answer.find_or_create_by!(content: content)
+        answer = Answer.find_or_create_by!(content: content, correct: answer == answers_data.first)
 
         qa_params = {
           question: question,
-          answer: answer,
-          correct: answer == answers_data.first
+          answer: answer
         }
         question_answer = QuestionAnswer.find_or_create_by!(qa_params)
       end
