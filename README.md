@@ -1,4 +1,4 @@
-[ER Diagram]("ER Diagram")
+[ER Diagram](https://raw.githubusercontent.com/omidbachari/multiple-choice/readme-image/er-img.png "ER Diagram")
 
 ## User Stories
 ### Instructor Inputs a Question
