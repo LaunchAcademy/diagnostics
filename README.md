@@ -1,3 +1,5 @@
+[ER Diagram](er-img.png "ER Diagram")
+
 ## User Stories
 ### Instructor Inputs a Question
 
