@@ -1,0 +1,15 @@
+---
+questions:
+- question: What language is the Rails framework written in?
+  answers:
+  - correct_answer: Ruby
+  - wrong_answer: jQuery
+  - wrong_answer: C++
+  - wrong_answer: SQL
+
+- question: What language do we use to input and retrieve data from a Relational Database?
+  answers:
+  - correct_answer: SQL
+  - wrong_answer: node
+  - wrong_answer: Javascript
+  - wrong_answer: Rust
