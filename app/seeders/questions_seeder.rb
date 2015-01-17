@@ -1,4 +1,4 @@
-class QuestionSeeder
+class QuestionsSeeder
   attr_reader :questions_data
 
   def initialize(yaml_file)
