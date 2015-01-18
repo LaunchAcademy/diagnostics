@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   validates :name, presence: true
   validates :provider, presence: true
-  validates :uid, presence:true
-  validates_uniqueness_of :uid, scope: :provider
+  validates :uid, presence: true
+  validates :uid, uniqueness: { scope: :provider }
 
   def self.find_or_create_via_omniauth(auth)
     user = User.find_or_initialize_by(provider: auth['provider'], uid: auth['uid'])
