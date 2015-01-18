@@ -4,5 +4,4 @@ class QuestionAnswer < ActiveRecord::Base
 
   validates :question, presence: true
   validates :answer, presence: true
-  validates :correct, inclusion: { in: [true, false] }
 end
