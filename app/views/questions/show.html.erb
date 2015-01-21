@@ -1,0 +1,14 @@
+<div class="question panel text-center">
+  <h2><%= @question.query %></h2>
+</div>
+
+<ul class="small-block-grid-1 medium-block-grid-2">
+  <% @question.answers.shuffle.each do |answer| %>
+    <li class="answer">
+      <%= form_for AnswerSubmission.new do |f| %>
+        <%= f.hidden_field :answer_id, value: answer.id %>
+        <%= f.submit answer.content, class: "button expand" %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

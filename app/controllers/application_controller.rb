@@ -9,8 +9,16 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize_user
+    session[:return_to] = request.url
     unless current_user
-      redirect_to root_path, notice: 'Please, sign in first.'
+      redirect_to "/auth/github"
+    end
+  end
+
+  def authorize_admin
+    if !current_user || !current_user.admin?
+      flash[:alert] = 'Unauthorized.'
+      redirect_to root_path
     end
   end
 end

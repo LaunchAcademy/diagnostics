@@ -4,7 +4,7 @@ feature "user authentication" do
   let(:user) { FactoryGirl.create(:user) }
 
   before(:each) do
-    mock_omni_auth_for(user)
+    mock_omniauth_for(user)
   end
 
   scenario "user signs in" do
