@@ -6,9 +6,12 @@ require 'rspec/rails'
 require 'valid_attribute'
 require 'shoulda/matchers'
 
-# Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
+
+OmniAuth.config.test_mode = true
+include AuthenticationHelper
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
