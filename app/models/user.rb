@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
     user.save!
     user
   end
+
+  def admin?
+    role == "admin"
+  end
 end

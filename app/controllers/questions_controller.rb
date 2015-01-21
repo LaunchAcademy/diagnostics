@@ -1,4 +1,7 @@
 class QuestionsController < ApplicationController
+  before_action :authorize_admin, only: [:new, :create]
+  before_action :authorize_user, only: [:show]
+
   def new
     @question = Question.new
   end

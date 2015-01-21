@@ -13,4 +13,10 @@ class ApplicationController < ActionController::Base
       redirect_to root_path, notice: 'Please, sign in first.'
     end
   end
+
+  def authorize_admin
+    if !current_user || !current_user.admin?
+      redirect_to root_path, notice: 'Unauthorized.'
+    end
+  end
 end

@@ -17,4 +17,9 @@ feature "user submits an answer" do
     click_on "SQL"
     expect(page).to have_content("Sorry, that was incorrect.")
   end
+
+  scenario "unauthenticated user attempts to answer a question" do
+    visit question_path(question)
+    expect(page).to have_content("Please, sign in first.")
+  end
 end
