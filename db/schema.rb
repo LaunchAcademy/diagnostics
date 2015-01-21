@@ -17,13 +17,14 @@ ActiveRecord::Schema.define(version: 20150121162317) do
   enable_extension "plpgsql"
 
   create_table "answer_submissions", force: :cascade do |t|
-    t.integer  "answer_id",  null: false
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id",     null: false
+    t.integer  "question_id", null: false
+    t.integer  "answer_id",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "answer_submissions", ["user_id", "answer_id"], name: "index_answer_submissions_on_user_id_and_answer_id", unique: true, using: :btree
+  add_index "answer_submissions", ["user_id", "question_id"], name: "index_answer_submissions_on_user_id_and_question_id", unique: true, using: :btree
 
   create_table "answers", force: :cascade do |t|
     t.string   "content",                     null: false
