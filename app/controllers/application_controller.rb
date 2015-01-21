@@ -9,9 +9,10 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize_user
+    session[:return_to] = request.url
     unless current_user
       flash[:warning] = 'Please, sign in first.'
-      redirect_to root_path
+      redirect_to "/auth/github"
     end
   end
 

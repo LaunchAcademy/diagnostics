@@ -1,11 +1,11 @@
 module AuthenticationHelper
   def sign_in(user)
-    mock_omni_auth_for(user)
+    mock_omniauth_for(user)
     visit root_path
     click_on "Sign in"
   end
 
-  def mock_omni_auth_for(user)
+  def mock_omniauth_for(user)
     mock_options = {
       provider: user.provider,
       uid: user.uid,

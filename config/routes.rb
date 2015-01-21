@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :answer_submissions, only: [:create]
 
   get "/auth/:provider/callback" => "sessions#create"
-  get '/sign_out' => 'sessions#destroy', as: :sign_out
+  get "/auth/failure" => "sessions#create"
+  get "/sign_out" => 'sessions#destroy', as: :sign_out
 
   root "home#show"
 end
