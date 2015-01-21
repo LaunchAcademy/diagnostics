@@ -10,13 +10,15 @@ class ApplicationController < ActionController::Base
 
   def authorize_user
     unless current_user
-      redirect_to root_path, notice: 'Please, sign in first.'
+      flash[:warning] = 'Please, sign in first.'
+      redirect_to root_path
     end
   end
 
   def authorize_admin
     if !current_user || !current_user.admin?
-      redirect_to root_path, notice: 'Unauthorized.'
+      flash[:alert] = 'Unauthorized.'
+      redirect_to root_path
     end
   end
 end

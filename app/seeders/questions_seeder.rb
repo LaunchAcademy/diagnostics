@@ -10,8 +10,8 @@ class QuestionsSeeder
     questions_data.each do |query, answers_data|
       question = Question.find_or_create_by!(query: query)
 
-      answers_data.each do |content|
-        question.answers.find_or_create_by!(content: content)
+      answers_data.each_with_index do |content, i|
+        question.answers.find_or_create_by!(content: content, correct: i == 0)
       end
     end
   end

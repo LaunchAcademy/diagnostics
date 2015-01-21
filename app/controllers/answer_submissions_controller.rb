@@ -4,9 +4,9 @@ class AnswerSubmissionsController < ApplicationController
     @answer_submission.user = current_user
     if @answer_submission.save
       if @answer_submission.answer.correct?
-        flash[:notice] = "Correct!"
+        flash[:success] = "Correct!"
       else
-        flash[:notice] = "Sorry, that was incorrect."
+        flash[:alert] = "Sorry, that was incorrect."
       end
     end
     redirect_to root_path
