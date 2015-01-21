@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Question</th>
+    <th>Correct Answer</th>
+    <th>Submissions</th>
+  </tr>
+  <% @questions.each do |question| %>
+    <tr>
+      <td><%= question.query %></td>
+      <td><%= question.correct_answer %></td>
+      <td><%= question.answer_submissions.count %></td>
+    </tr>
+  <% end %>
+</table>
