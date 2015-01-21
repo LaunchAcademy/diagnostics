@@ -5,7 +5,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :uid, null: false
       t.string :name, null: false
       t.string :email
-      t.string :image
+      t.text :image
+      t.string :role, default: "student"
 
       t.timestamps
     end

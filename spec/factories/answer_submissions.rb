@@ -1,6 +1,6 @@
 FactoryGirl.define do
-  factory :question_answer do
-    question
+  factory :answer_submission do
+    user
     answer
   end
 end

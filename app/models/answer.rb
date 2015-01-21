@@ -1,8 +1,8 @@
 class Answer < ActiveRecord::Base
-  has_many :question_answers
-  has_many :questions,
-    through: :question_answers
+  belongs_to :question
+  has_many :answer_submissions
 
+  validates :question, presence: true
   validates :content, presence: true
   validates :correct, inclusion: { in: [true, false] }
 end

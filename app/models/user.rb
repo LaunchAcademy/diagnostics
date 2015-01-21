@@ -1,8 +1,11 @@
 class User < ActiveRecord::Base
+  has_many :answer_submissions
+
   validates :name, presence: true
   validates :provider, presence: true
   validates :uid, presence: true
   validates :uid, uniqueness: { scope: :provider }
+  validates :role, inclusion: { in: %w(student admin) }
 
   def self.find_or_create_via_omniauth(auth)
     user = User.find_or_initialize_by(provider: auth['provider'], uid: auth['uid'])

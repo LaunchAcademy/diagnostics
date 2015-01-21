@@ -11,23 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150117195939) do
+ActiveRecord::Schema.define(version: 20150121162317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "answers", force: :cascade do |t|
-    t.string   "content",                    null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.boolean  "correct",    default: false, null: false
+  create_table "answer_submissions", force: :cascade do |t|
+    t.integer  "answer_id",  null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "question_answers", force: :cascade do |t|
-    t.integer  "question_id", null: false
-    t.integer  "answer_id",   null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  add_index "answer_submissions", ["user_id", "answer_id"], name: "index_answer_submissions_on_user_id_and_answer_id", unique: true, using: :btree
+
+  create_table "answers", force: :cascade do |t|
+    t.string   "content",                     null: false
+    t.boolean  "correct",     default: false, null: false
+    t.integer  "question_id",                 null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "questions", force: :cascade do |t|
@@ -37,11 +40,12 @@ ActiveRecord::Schema.define(version: 20150117195939) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "provider",   null: false
-    t.string   "uid",        null: false
-    t.string   "name",       null: false
+    t.string   "provider",                       null: false
+    t.string   "uid",                            null: false
+    t.string   "name",                           null: false
     t.string   "email"
-    t.string   "image"
+    t.text     "image"
+    t.string   "role",       default: "student"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

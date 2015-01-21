@@ -1,0 +1,10 @@
+<div class="question">
+  <%= @question.query %>
+</div>
+
+<% @question.answers.each do |answer| %>
+  <%= form_for AnswerSubmission.new do |f| %>
+    <%= f.hidden_field :answer_id, value: answer.id %>
+    <%= f.submit answer.content %>
+  <% end %>
+<% end %>
