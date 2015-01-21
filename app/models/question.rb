@@ -9,4 +9,12 @@ class Question < ActiveRecord::Base
       return answer if answer.correct?
     end
   end
+
+  def correct_submissions_count
+    result = 0
+    answer_submissions.each do |submission|
+      result += 1 if submission.answer.correct?
+    end
+    return result
+  end
 end

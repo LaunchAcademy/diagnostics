@@ -2,13 +2,15 @@
   <tr>
     <th>Question</th>
     <th>Correct Answer</th>
-    <th>Submissions</th>
+    <th>Total Submissions</th>
+    <th>Correct Submissions</th>
   </tr>
   <% @questions.each do |question| %>
     <tr>
       <td><%= question.query %></td>
-      <td><%= question.correct_answer %></td>
+      <td><%= question.correct_answer.try(:content) %></td>
       <td><%= question.answer_submissions.count %></td>
+      <td><%= question.correct_submissions_count %></td>
     </tr>
   <% end %>
 </table>
