@@ -4,7 +4,7 @@ feature "user submits an answer" do
   let(:user) { FactoryGirl.create(:user) }
   let(:question) { FactoryGirl.create(:question_with_answers) }
 
-  scenario "user submits a correct answer", focus: true do
+  scenario "user submits a correct answer" do
     sign_in(user)
     visit question_path(question)
     click_on "Ruby"
