@@ -1,5 +1,4 @@
 # Multiple-Choice App
-
 An application that allows instructors to easily create and administer multiple-choice quizzes.
 
 Inspired by a chapter in [_Make it Stick: The Science of Successful Learning_](http://www.hup.harvard.edu/catalog.php?isbn=9780674729018) in which students test scores rose an entire letter grade, simply by implementing short, post-lecture quizzes.

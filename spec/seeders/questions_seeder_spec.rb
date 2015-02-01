@@ -1,7 +1,14 @@
 require "rails_helper"
 
 RSpec.describe QuestionsSeeder do
-  let(:questions_yaml) { "#{Rails.root}/lib/assets/questions/example-set.yml" }
+  let(:questions_yaml) { "#{Rails.root}/lib/assets/questions/example_set.yml" }
+
+  it "should not create duplicate question sets on multiple runs" do
+    QuestionsSeeder.new(questions_yaml).seed!
+    initial_count = QuestionSet.count
+    QuestionsSeeder.new(questions_yaml).seed!
+    expect(QuestionSet.count).to eq(initial_count)
+  end
 
   it "should not create duplicate question records on multiple runs" do
     QuestionsSeeder.new(questions_yaml).seed!
