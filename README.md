@@ -129,4 +129,13 @@ So that it is not displayed to students before a set date.
 
 ### Admin deletes a question set
 
+### Question Explanation
+```
+As a student
+I would like to have an explanation as to why an answer is correct
+So that I can better comprehend the material presented.
+```
 
+#### Acceptance Criteria
+* [] A explanation is displayed after an answer has been submitted to a question.
+* [] An optional link to reading material is displayed.
