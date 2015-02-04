@@ -19,10 +19,10 @@ So that I can test student's knowledge.
 ```
 
 #### Acceptance Criteria:
-* [] I can navigate to a page to input a new question.
-* [] I must input a question, a correct answer, as well as one
+* [ ] I can navigate to a page to input a new question.
+* [ ] I must input a question, a correct answer, as well as one
 or more incorrect answers.
-* [] If I forget one of these fields, I am presented with errors.
+* [ ] If I forget one of these fields, I am presented with errors.
 
 ### Instructor Sees Percentage of Correct Responses
 ```
@@ -32,9 +32,9 @@ So that I can know how well the lecture was received.
 ```
 
 #### Acceptance Criteria:
-* [] I can navigate to a show page for questions.
-* [] I see a list of questions with a score for each.
-* [] I see the number of students that have submitted an answer for
+* [ ] I can navigate to a show page for questions.
+* [ ] I see a list of questions with a score for each.
+* [ ] I see the number of students that have submitted an answer for
 a particular question.
 
 ### Student Answers a Question
@@ -67,9 +67,9 @@ So that I can indicate comprehension to the staff.
 ```
 
 #### Acceptance Criteria:
-* [] I can navigate to a central page and signal that I'm lost
-* [] I am notified if my signal was successful
-* [] My I'm lost signal fades away after a short period of time.
+* [ ] I can navigate to a central page and signal that I'm lost
+* [ ] I am notified if my signal was successful
+* [ ] My I'm lost signal fades away after a short period of time.
 
 ### Instructor Sees Number of "I'm Lost"s
 ```
@@ -79,11 +79,11 @@ So that I am aware of how effective my facilitation is.
 ```
 
 #### Acceptance Criteria:
-* [] I can navigate to a page for I'm lost signals
-* [] I can leave this page open and see live I'm lost signals come and go
-* [] I can see a raw number of total I'm losts.
-* [] When the signals grow beyond a certain level, I am alerted.
-* [] I can clear out all I'm lost signals.
+* [ ] I can navigate to a page for I'm lost signals
+* [ ] I can leave this page open and see live I'm lost signals come and go
+* [ ] I can see a raw number of total I'm losts.
+* [ ] When the signals grow beyond a certain level, I am alerted.
+* [ ] I can clear out all I'm lost signals.
 
 ### Question Set Summary
 ```
@@ -100,9 +100,11 @@ So that I can know what I have and have not completed.
 ```
 
 #### Acceptance Criteria
-* [] Display number of questions answered correctly per question set.
-* [] Display number of questions answered incorrectly per question set.
-* [] If the question set is complete.
+* [ ] Display number of questions answered correctly per question set.
+* [ ] Display number of questions answered incorrectly per question set.
+* [ ] If the question set is complete.
+* [ ] Link to the start of the question set if it isn't complete.
+* [ ] Link to the summary of the question set if it is complete.
 
 ### Student Attendance
 ```
@@ -111,12 +113,23 @@ I would like to see which students have been active at Launch Academy on a speci
 So that I can take attendance.
 ```
 
+#### Acceptance Criteria
+* [ ] I can see a list of absent students on a particular date.
+* [ ] I can see a list of present students on a particular date.
+
 ### Adding a Question Set
 ```
 As an instructor
 I would like to upload a file containing a set of questions
 So that I can easily issue a new question set to students.
 ```
+
+#### Acceptance Critera
+* [ ] I can upload a YAML file that contains a list of questions.
+* [ ] An example of the file format is displayed on the upload page.
+* [ ] After submitting the file, I'm shown a list of questions as they would appear to the student.
+* [ ] If I click 'Cancel', I'm brought back to the upload page.
+* [ ] If I click 'Save', the questions are saved.
 
 ### Assign an Issue Date to a Question Set
 ```
@@ -137,5 +150,5 @@ So that I can better comprehend the material presented.
 ```
 
 #### Acceptance Criteria
-* [] A explanation is displayed after an answer has been submitted to a question.
-* [] An optional link to reading material is displayed.
+* [ ] A explanation is displayed after an answer has been submitted to a question.
+* [ ] An optional link to reading material is displayed.
