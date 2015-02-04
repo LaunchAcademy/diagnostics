@@ -19,5 +19,5 @@ What language do we use to input and retrieve data from a Relational Database?:
 - Rust
 
 "`rm -rf /` is the best way to fix configuration issues.":
-- true
-- false
+- "true"
+- "false"

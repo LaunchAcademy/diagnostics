@@ -1,5 +1,7 @@
 FactoryGirl.define do
   factory :question do
+    question_set
+
     query "What language is the Rails framework written in?"
 
     factory :question_with_answers do
@@ -10,5 +12,6 @@ FactoryGirl.define do
         end
       end
     end
+
   end
 end

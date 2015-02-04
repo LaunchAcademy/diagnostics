@@ -1,2 +1,2 @@
-questions_yaml = "#{Rails.root}/lib/assets/questions.yml"
-QuestionsSeeder.new(questions_yaml).seed!
+question_sets = Dir[Rails.root.join("lib/assets/questions/*.yml")]
+question_sets.each { |q| QuestionsSeeder.new(q).seed! }
