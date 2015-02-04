@@ -45,8 +45,8 @@ So that I can test my knowledge of what I just learned.
 ```
 
 #### Acceptance Criteria:
-* [] I am displayed a multiple choice question
-* [] I am notified if my response is correct or incorrect
+* [x] I am displayed a multiple choice question
+* [x] I am notified if my response is correct or incorrect
 
 ### Student Answers a Series of Questions
 ```
@@ -56,8 +56,8 @@ So that I can test my knowledge of what I just learned.
 ```
 
 #### Acceptance Criteria:
-* [] I am presented a series of multiple choice questions.
-* [] When I complete the last question in the series, I see an end screen.
+* [x] I am presented a series of multiple choice questions.
+* [x] The student is notified when they have completed the last question in the set.
 
 ### Student Submits Anonymous "I'm Lost"
 ```
