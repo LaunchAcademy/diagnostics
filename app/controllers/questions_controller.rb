@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :authorize_admin, only: [:new, :create]
+  before_action :authorize_admin, only: [:new, :create, :index]
   before_action :authorize_user, only: [:show]
 
   def new
@@ -20,6 +20,10 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+  end
+
+  def index
+    @questions = Question.all.limit(20)
   end
 
   private
