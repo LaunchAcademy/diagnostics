@@ -78,3 +78,44 @@ So that I am aware of how effective my facilitation is.
 * [] I can see a raw number of total I'm losts.
 * [] When the signals grow beyond a certain level, I am alerted.
 * [] I can clear out all I'm lost signals.
+
+### Question Set Summary
+
+As as student
+I want to see a summary of the question set I have completed
+So that I know how well I understood the material.
+
+### Student Index Page for Question Sets
+
+As a student
+I want to see all of the question sets assigned to me
+So that I can know what I have and have not completed.
+
+#### Acceptance Criteria
+* [] Display number of questions answered correctly per question set.
+* [] Display number of questions answered incorrectly per question set.
+* [] If the question set is complete.
+
+### Student Attendance
+
+As an administrator
+I would like to see which students have been active at Launch Academy on a specific day
+So that I can take attendance.
+
+### Adding a Question Set
+
+As an administrator
+I would like to upload a file containing a set of questions
+So that I can easily issue a new question set to students.
+
+### Assign an Issue Date to a Question Set
+
+As an administrator
+I would like to assign a date to a question set
+So that it is not displayed to students before a set date.
+
+### Admin edits a question
+
+### Admin deletes a question set
+
+
