@@ -4,7 +4,7 @@ class QuizzesController < ApplicationController
     if quiz
       redirect_to quiz.questions.first
     else
-      flash[:alert] = "Question Set does not exist!"
+      flash[:alert] = "Quiz does not exist!"
       redirect_to root_path
     end
   end

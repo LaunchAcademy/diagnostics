@@ -5,7 +5,7 @@ Inspired by a chapter in [_Make it Stick: The Science of Successful Learning_](h
 
 ## Features
 * GitHub Authentication
-* Loading of YAML-formatted Question Sets from lib/assets/questions via `rake db:seed`
+* Loading of YAML-formatted Quizzes from lib/assets/quizzes via `rake db:seed`
 
 ## ER Diagram
 ![ER Diagram](er-img.png "ER Diagram")
@@ -85,26 +85,26 @@ So that I am aware of how effective my facilitation is.
 * [ ] When the signals grow beyond a certain level, I am alerted.
 * [ ] I can clear out all I'm lost signals.
 
-### Question Set Summary
+### Quiz Summary
 ```
 As as student
-I want to see a summary of the question set I have completed
+I want to see a summary of the quiz I have completed
 So that I know how well I understood the material.
 ```
 
-### Student Index Page for Question Sets
+### Student Index Page for Quizzes
 ```
 As a student
-I want to see all of the question sets assigned to me
+I want to see all of the quizzes assigned to me
 So that I can know what I have and have not completed.
 ```
 
 #### Acceptance Criteria
-* [ ] Display number of questions answered correctly per question set.
-* [ ] Display number of questions answered incorrectly per question set.
-* [ ] If the question set is complete.
-* [ ] Link to the start of the question set if it isn't complete.
-* [ ] Link to the summary of the question set if it is complete.
+* [ ] Display number of questions answered correctly per quiz.
+* [ ] Display number of questions answered incorrectly per quiz.
+* [ ] If the quiz is complete.
+* [ ] Link to the start of the quiz if it isn't complete.
+* [ ] Link to the summary of the quiz if it is complete.
 
 ### Student Attendance
 ```
@@ -117,11 +117,11 @@ So that I can take attendance.
 * [ ] I can see a list of absent students on a particular date.
 * [ ] I can see a list of present students on a particular date.
 
-### Adding a Question Set
+### Adding a Quiz
 ```
 As an instructor
 I would like to upload a file containing a set of questions
-So that I can easily issue a new question set to students.
+So that I can easily issue a new quiz to students.
 ```
 
 #### Acceptance Critera
@@ -131,16 +131,16 @@ So that I can easily issue a new question set to students.
 * [ ] If I click 'Cancel', I'm brought back to the upload page.
 * [ ] If I click 'Save', the questions are saved.
 
-### Assign an Issue Date to a Question Set
+### Assign an Issue Date to a Quiz
 ```
 As an instructor
-I would like to assign a date to a question set
+I would like to assign a date to a quiz
 So that it is not displayed to students before a set date.
 ```
 
 ### Instructor edits a question
 
-### Instructor deletes a question set
+### Instructor deletes a Quiz
 
 ### Question Explanation
 ```
