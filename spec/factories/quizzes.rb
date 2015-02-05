@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :question_set do
+  factory :quiz do
     sequence(:name) { |n| "Example Set #{n}" }
   end
 end

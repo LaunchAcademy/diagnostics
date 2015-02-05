@@ -12,14 +12,14 @@ class AnswerSubmissionsController < ApplicationController
       end
 
       question = @answer_submission.question
-      question_set = @answer_submission.question.question_set
-      next_index = question_set.questions.index(question) + 1
-      next_question = question_set.questions[next_index]
+      quiz = @answer_submission.question.quiz
+      next_index = quiz.questions.index(question) + 1
+      next_question = quiz.questions[next_index]
 
       if next_question
         redirect_to next_question
       else
-        flash[:info] = "#{question_set.name} complete."
+        flash[:info] = "#{quiz.name} complete."
         redirect_to root_path
       end
     else

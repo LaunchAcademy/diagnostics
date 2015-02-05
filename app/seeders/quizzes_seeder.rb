@@ -1,4 +1,4 @@
-class QuestionsSeeder
+class QuizzesSeeder
   attr_reader :questions_data
 
   def initialize(yaml_file)
@@ -7,11 +7,11 @@ class QuestionsSeeder
   end
 
   def seed!
-    question_set = QuestionSet.find_or_create_by!(name: question_set_name)
+    quiz = Quiz.find_or_create_by!(name: quiz_name)
 
     questions_data.each do |query, answers_data|
       question = Question.find_or_create_by!(query: query)
-      question_set.questions << question
+      quiz.questions << question
 
       answers_data.each_with_index do |content, i|
         question.answers.find_or_create_by!(content: content, correct: i == 0)
@@ -19,7 +19,7 @@ class QuestionsSeeder
     end
   end
 
-  def question_set_name
+  def quiz_name
     File.basename(@yaml_file, ".yml").titleize
   end
 

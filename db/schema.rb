@@ -34,20 +34,20 @@ ActiveRecord::Schema.define(version: 20150201224208) do
     t.datetime "updated_at",                  null: false
   end
 
-  create_table "question_sets", force: :cascade do |t|
+  create_table "questions", force: :cascade do |t|
+    t.text     "query",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "quiz_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "question_sets", ["name"], name: "index_question_sets_on_name", unique: true, using: :btree
-
-  create_table "questions", force: :cascade do |t|
-    t.text     "query",           null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "question_set_id"
-  end
+  add_index "quizzes", ["name"], name: "index_quizzes_on_name", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",                       null: false

@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  belongs_to :question_set
+  belongs_to :quiz
   has_many :answers
   has_many :answer_submissions
 
