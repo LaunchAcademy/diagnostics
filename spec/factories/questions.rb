@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :question do
-    question_set
+    quiz
 
     query "What language is the Rails framework written in?"
 
