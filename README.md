@@ -138,9 +138,9 @@ I would like to assign a date to a question set
 So that it is not displayed to students before a set date.
 ```
 
-### Admin edits a question
+### Instructor edits a question
 
-### Admin deletes a question set
+### Instructor deletes a question set
 
 ### Question Explanation
 ```
@@ -152,3 +152,9 @@ So that I can better comprehend the material presented.
 #### Acceptance Criteria
 * [ ] A explanation is displayed after an answer has been submitted to a question.
 * [ ] An optional link to reading material is displayed.
+
+### LaunchPass Integration
+
+### Assign a Quiz to a LaunchPass Team
+
+### Student Retakes a selection of missed questions
