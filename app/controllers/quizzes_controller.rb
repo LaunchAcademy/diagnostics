@@ -1,4 +1,10 @@
 class QuizzesController < ApplicationController
+  before_action :authorize_user, only: [:index]
+
+  def index
+    @quizzes = Quiz.all
+  end
+
   def show
     quiz = Quiz.find(params[:id])
     if quiz

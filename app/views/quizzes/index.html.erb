@@ -1,0 +1,32 @@
+<h1>All Quizzes</h1>
+
+<h5>Total Correct Answers: <%= current_user.total_correct_questions %></h5>
+<h5>
+  Total Incorrect Answers:
+  <%= current_user.total_answered_questions - current_user.total_correct_questions %>
+</h5>
+
+<table>
+  <tr>
+    <th>Quiz</th>
+    <th>Score</th>
+    <th>Assigned on</th>
+    <th>Complete?</th>
+  </tr>
+  <% @quizzes.each do |quiz| %>
+    <tr>
+      <td><%= quiz.name %></td>
+      <td>
+        <%= "#{quiz.student_score(current_user)}/#{quiz.questions.length}" %>
+      </td>
+      <td><%= format_datetime(quiz.created_at) %></td>
+      <td>
+        <% if quiz.completed_by_student?(current_user) %>
+          <%= link_to "View Answers", root_path %>
+        <% else %>
+          <%= link_to "Complete Quiz Now", quiz_path(quiz) %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
