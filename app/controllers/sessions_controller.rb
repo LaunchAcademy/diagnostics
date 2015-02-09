@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       flash[:success] = "Signed in!"
-      redirect_to session[:return_to] || root_path
+      redirect_to session[:return_to] || quizzes_path
     else
       flash[:alert] = "Error signing in!"
       redirect_to root_path

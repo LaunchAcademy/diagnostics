@@ -3,7 +3,7 @@
 <% if current_user.num_incomplete_quizzes > 0 %>
   <% num = current_user.num_incomplete_quizzes %>
   <div class="incomplete-alert">
-    You have <%= num %> incomplete quiz<%= "zes" if num > 1 %>!
+    You have <%= pluralize(num, "incomplete quiz")%>!
   </div>
 <% end %>
 
