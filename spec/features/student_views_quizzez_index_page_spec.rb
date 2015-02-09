@@ -10,6 +10,7 @@ Acceptance Criteria:
 * [x] Display number of questions answered incorrectly per quiz.
 * [x] Link to the start of the quiz if it isn't complete.
 * [x] Link to the summary of the quiz if it is complete.
+* [] Provides a notice about the number of unfinished quizzes
 ) do
 
   let(:user) { FactoryGirl.create(:user_with_answered_quiz) }
@@ -20,6 +21,7 @@ Acceptance Criteria:
 
     visit quizzes_path
 
+    expect(page).to have_content "You have 1 incomplete quiz!"
     expect(page).to have_content "Total Correct Answers: 1"
     expect(page).to have_content "Total Incorrect Answers: 0"
     expect(page).to have_content unfinished_quiz.name
