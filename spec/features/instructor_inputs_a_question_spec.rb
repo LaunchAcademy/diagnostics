@@ -18,7 +18,7 @@ feature "Instructor Inputs a Question", %(
   scenario "admin creates a question" do
     sign_in(admin)
 
-    visit new_question_path
+    visit new_admin_question_path
     fill_in "Query", with: "What language do we use for databases?"
     click_on "Ask question!"
 
@@ -26,7 +26,7 @@ feature "Instructor Inputs a Question", %(
   end
 
   scenario "unauthenticated user visits new question path" do
-    visit new_question_path
+    visit new_admin_question_path
     expect(page).to have_content("Unauthorized")
   end
 
@@ -34,7 +34,7 @@ feature "Instructor Inputs a Question", %(
     user = FactoryGirl.create(:user)
     sign_in(user)
 
-    visit new_question_path
+    visit new_admin_question_path
 
     expect(page).to have_content("Unauthorized")
   end
