@@ -1,0 +1,17 @@
+<h1><%= @quiz.name %></h1>
+
+<ul>
+  <% @questions.each do |question| %>
+    <h2><%= question.query %></h2>
+    <!-- Question Answers -->
+    <ul class="small-block-grid-1 medium-block-grid-2">
+      <% question.answers.shuffle.each do |answer| %>
+        <li class="answer
+              <%= "correct" if answer.correct %>
+              <%= "student-choice" if answer == question.student_answer(current_user) %>">
+          <div class=" button expand"><%= answer.content %></div>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>

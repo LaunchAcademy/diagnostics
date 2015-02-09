@@ -18,4 +18,13 @@ class Question < ActiveRecord::Base
     end
     return result
   end
+
+  def student_answer(user)
+    answers.each do |answer|
+      if AnswerSubmission.find_by(question: self, user: user, answer: answer)
+        return answer
+      end
+    end
+  end
+
 end
