@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :quizzes, only: [:show]
+  resources :quizzes, only: [:show, :index]
 
   resources :questions, only: [:new, :create, :show, :index] do
     resources :answers, only: [:new, :create]
