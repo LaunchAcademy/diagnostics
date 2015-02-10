@@ -14,22 +14,26 @@ feature "user views quiz summary", %q(
   [x] User's answer for each question is marked
 ) do
 
-  let(:user) { FactoryGirl.create(:user_with_answered_quiz) }
+
+  before(:each) do
+    @user = FactoryGirl.create(:user)
+    @quiz = FactoryGirl.create(:quiz_with_questions)
+    @question = @quiz.questions.first
+    FactoryGirl.create(:answer_submission,
+      user: @user,
+      answer: @question.correct_answer
+    )
+  end
 
   scenario "user views quiz summary page" do
-    sign_in(user)
-    quiz = Quiz.first
-    visit quiz_questions_path(quiz)
+    sign_in(@user)
+    visit quiz_questions_path(@quiz)
 
-    sample_question = quiz.questions.first
-    correct_answer = sample_question.correct_answer
-    user_answer = sample_question.student_answer(user)
-
-    expect(page).to have_content(quiz.student_score(user))
-    expect(page).to have_content(quiz.completed_at(user).day)
-    expect(page).to have_content(quiz.name)
-    expect(page).to have_content(sample_question.query)
-    sample_question.answers.each do |answer|
+    expect(page).to have_content(@quiz.student_score(@user))
+    expect(page).to have_content(@quiz.completed_at(@user).day)
+    expect(page).to have_content(@quiz.name)
+    expect(page).to have_content(@question.query)
+    @question.answers.each do |answer|
       expect(page).to have_content(answer.content)
     end
     expect(page).to have_selector(".answer.student-choice")
