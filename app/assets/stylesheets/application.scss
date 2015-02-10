@@ -16,19 +16,23 @@ table {
 }
 
 .answer {
-  &.correct .button {
-    background-color: lime;
+  &.student-choice .button {
+    background-color: $alert-color;
+
+    &:after {
+      content:"X";
+      border: 3px solid white;
+      border-radius: 1em;
+      padding: .2em;
+      position: absolute;
+      right: .6em;
+      top: .6em;
+      width: 2em;
+    }
   }
 
-  &.student-choice .button:after {
-    content:"X";
-    border: 3px solid white;
-    border-radius: 1em;
-    padding: .2em;
-    position: absolute;
-    right: .6em;
-    top: .6em;
-    width: 2em;
+  &.correct .button {
+    background-color: $success-color;
   }
 
   &.student-choice.correct .button:after {
