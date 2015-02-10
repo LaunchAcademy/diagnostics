@@ -6,6 +6,7 @@
 
 <ul>
   <% @questions.each do |question| %>
+    <hr />
     <h2><%= question.query %></h2>
     <!-- Question Answers -->
     <ul class="small-block-grid-1 medium-block-grid-2">
@@ -13,7 +14,7 @@
         <li class="answer
               <%= "correct" if answer.correct %>
               <%= "student-choice" if answer == question.student_answer(current_user) %>">
-          <div class=" button expand"><%= answer.content %></div>
+          <div class="button expand"><%= answer.content %></div>
         </li>
       <% end %>
     </ul>

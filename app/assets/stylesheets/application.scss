@@ -4,3 +4,24 @@
 li.answer input, li.answer {
   font-size: 50px;
 }
+
+.answer {
+  &.correct .button {
+    background-color: lime;
+  }
+
+  &.student-choice .button:after {
+    content:"X";
+    border: 3px solid white;
+    border-radius: 1em;
+    padding: .2em;
+    position: absolute;
+    right: .6em;
+    top: .6em;
+    width: 2em;
+  }
+
+  &.student-choice.correct .button:after {
+    content: "✓";
+  }
+}
