@@ -26,7 +26,7 @@ feature "user views quiz summary", %q(
     user_answer = sample_question.student_answer(user)
 
     expect(page).to have_content(quiz.student_score(user))
-    expect(page).to have_content(quiz.completed_at(user))
+    expect(page).to have_content(quiz.completed_at(user).day)
     expect(page).to have_content(quiz.name)
     expect(page).to have_content(sample_question.query)
     sample_question.answers.each do |answer|

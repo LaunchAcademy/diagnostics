@@ -1,8 +1,8 @@
 <h1><%= @quiz.name %></h1>
 
 <h4>Your Total: <%= @quiz.student_score(current_user) %></h4>
-<h4>You completed this quiz at
-  <%= @quiz.completed_at(current_user) %></h4>
+<h4>You completed this quiz on
+  <%= format_datetime(@quiz.completed_at(current_user)) %></h4>
 
 <ul>
   <% @questions.each do |question| %>
