@@ -6,23 +6,12 @@ Inspired by a chapter in [_Make it Stick: The Science of Successful Learning_](h
 ## Features
 * GitHub Authentication
 * Loading of YAML-formatted Quizzes from lib/assets/quizzes via `rake db:seed`
+* User sees completed/uncompleted Quizzes after sigining in.
 
 ## ER Diagram
 ![ER Diagram](er-img.png "ER Diagram")
 
 ## User Stories
-### Instructor Inputs a Question
-```
-As an instructor
-I want to add a new question
-So that I can test student's knowledge.
-```
-
-#### Acceptance Criteria:
-* [ ] I can navigate to a page to input a new question.
-* [ ] I must input a question, a correct answer, as well as one
-or more incorrect answers.
-* [ ] If I forget one of these fields, I am presented with errors.
 
 ### Instructor Sees Percentage of Correct Responses
 ```
@@ -36,28 +25,6 @@ So that I can know how well the lecture was received.
 * [ ] I see a list of questions with a score for each.
 * [ ] I see the number of students that have submitted an answer for
 a particular question.
-
-### Student Answers a Question
-```
-As a student
-I want to answer a question related to lecture
-So that I can test my knowledge of what I just learned.
-```
-
-#### Acceptance Criteria:
-* [x] I am displayed a multiple choice question
-* [x] I am notified if my response is correct or incorrect
-
-### Student Answers a Series of Questions
-```
-As a student
-I want to be presented with a sequence of questions related to a lecture
-So that I can test my knowledge of what I just learned.
-```
-
-#### Acceptance Criteria:
-* [x] I am presented a series of multiple choice questions.
-* [x] The student is notified when they have completed the last question in the set.
 
 ### Student Submits Anonymous "I'm Lost"
 ```
