@@ -28,9 +28,25 @@ RSpec.describe User, type: :model do
   end
 
   it "returns user's total number of correct questions" do
-    user = FactoryGirl.create(:user_with_answered_quiz)
+    user = FactoryGirl.create(:user)
+    quiz = FactoryGirl.create(:quiz_with_questions)
+    question = quiz.questions.first
+    FactoryGirl.create(:answer_submission,
+      user: user,
+      answer: question.correct_answer)
 
-    expect(user.total_answered_questions).to eq(1)
+    expect(user.total_correct_questions).to eq(1)
+  end
+
+  it "returns user's total number of incorrect questions" do
+    user = FactoryGirl.create(:user)
+    quiz = FactoryGirl.create(:quiz_with_questions)
+    question = quiz.questions.first
+    FactoryGirl.create(:answer_submission,
+      user: user,
+      answer: question.answers.last)
+
+    expect(user.total_incorrect_questions).to eq(1)
   end
 
   it "returns user's number of incomplete quizzes" do
@@ -38,6 +54,6 @@ RSpec.describe User, type: :model do
     FactoryGirl.create(:quiz_with_questions)
     FactoryGirl.create(:quiz_with_questions)
 
-    expect(user.num_incomplete_quizzes).to eq(2)
+    expect(user.incomplete_quizzes_count).to eq(2)
   end
 end

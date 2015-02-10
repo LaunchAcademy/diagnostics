@@ -31,7 +31,11 @@ class User < ActiveRecord::Base
     AnswerSubmission.includes(:answer).where(answers: {correct: true}).count
   end
 
-  def num_incomplete_quizzes
+  def total_incorrect_questions
+    total_answered_questions - total_correct_questions
+  end
+
+  def incomplete_quizzes_count
     Quiz.all.to_a.count { |quiz| !quiz.completed_by_student?(self) }
   end
 

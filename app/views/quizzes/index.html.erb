@@ -1,17 +1,15 @@
 <h1>All Quizzes</h1>
 
-<% if current_user.num_incomplete_quizzes > 0 %>
-  <% num = current_user.num_incomplete_quizzes %>
+<% count = current_user.incomplete_quizzes_count %>
+<% if count > 0 %>
+  <% num = count %>
   <div class="incomplete-alert">
     You have <%= pluralize(num, "incomplete quiz")%>!
   </div>
 <% end %>
 
 <h5>Total Correct Answers: <%= current_user.total_correct_questions %></h5>
-<h5>
-  Total Incorrect Answers:
-  <%= current_user.total_answered_questions - current_user.total_correct_questions %>
-</h5>
+<h5>Total Incorrect Answers: <%= current_user.total_incorrect_questions %></h5>
 
 <table>
   <tr>
