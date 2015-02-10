@@ -6,19 +6,19 @@ RSpec.describe Quiz, type: :model do
   it { should validate_presence_of(:name) }
   it { should validate_uniqueness_of(:name) }
 
-  it "returns true if it has been completed by a student" do
-    user = FactoryGirl.create(:user)
-    quiz = FactoryGirl.create(:quiz_with_questions)
-    question = quiz.questions.first
-    FactoryGirl.create(:answer_submission,
-      user: user,
-      answer: question.correct_answer
-    )
+  describe "#completed_by_student?" do
+    it "returns true if it has been completed by a student" do
+      user = FactoryGirl.create(:user)
+      quiz = FactoryGirl.create(:quiz_with_questions)
+      question = quiz.questions.first
+      FactoryGirl.create(:answer_submission,
+        user: user,
+        answer: question.correct_answer
+      )
 
-    expect(quiz.completed_by_student?(user)).to eq(true)
-  end
+      expect(quiz.completed_by_student?(user)).to eq(true)
+    end
 
-  describe "#completed_by_student" do
     it "returns false if it has not been completed by a student" do
       user = FactoryGirl.create(:user)
       quiz = FactoryGirl.create(:quiz_with_questions)
