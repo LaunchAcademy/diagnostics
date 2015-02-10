@@ -8,10 +8,15 @@ RSpec.describe Quiz, type: :model do
 
   describe "#completed_at" do
     it "returns student's completion date of quiz" do
-      user = FactoryGirl.create(:user_with_answered_quiz)
+      user = FactoryGirl.create(:user)
+      quiz = FactoryGirl.create(:quiz_with_questions)
+      question = quiz.questions.first
+      FactoryGirl.create(:answer_submission,
+        user: user,
+        answer: question.correct_answer
+      )
+      
       time = Time.now.round
-      quiz = Quiz.first
-
       expect(quiz.completed_at(user).round).to eq(time)
     end
   end
