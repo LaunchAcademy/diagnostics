@@ -12,26 +12,32 @@ RSpec.describe Quiz, type: :model do
     question = quiz.questions.first
     FactoryGirl.create(:answer_submission,
       user: user,
-      answer: question.correct_answer)
+      answer: question.correct_answer
+    )
 
     expect(quiz.completed_by_student?(user)).to eq(true)
   end
 
-  it "returns false if it has not been completed by a student" do
-    user = FactoryGirl.create(:user)
-    quiz = FactoryGirl.create(:quiz_with_questions)
+  describe "#completed_by_student" do
+    it "returns false if it has not been completed by a student" do
+      user = FactoryGirl.create(:user)
+      quiz = FactoryGirl.create(:quiz_with_questions)
 
-    expect(quiz.completed_by_student?(user)).to eq(false)
+      expect(quiz.completed_by_student?(user)).to eq(false)
+    end
   end
 
-  it "returns a student's score" do
-    user = FactoryGirl.create(:user)
-    quiz = FactoryGirl.create(:quiz_with_questions)
-    question = quiz.questions.first
-    FactoryGirl.create(:answer_submission,
-      user: user,
-      answer: question.correct_answer)
+  describe "#student_score" do
+    it "returns a student's score" do
+      user = FactoryGirl.create(:user)
+      quiz = FactoryGirl.create(:quiz_with_questions)
+      question = quiz.questions.first
+      FactoryGirl.create(:answer_submission,
+        user: user,
+        answer: question.correct_answer
+      )
 
-    expect(quiz.student_score(user)).to eq(1)
+      expect(quiz.student_score(user)).to eq(1)
+    end
   end
 end
