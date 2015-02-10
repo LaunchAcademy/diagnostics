@@ -7,8 +7,12 @@ RSpec.describe Quiz, type: :model do
   it { should validate_uniqueness_of(:name) }
 
   it "returns true if it has been completed by a student" do
-    user = FactoryGirl.create(:user_with_answered_quiz)
-    quiz = Quiz.first
+    user = FactoryGirl.create(:user)
+    quiz = FactoryGirl.create(:quiz_with_questions)
+    question = quiz.questions.first
+    FactoryGirl.create(:answer_submission,
+      user: user,
+      answer: question.correct_answer)
 
     expect(quiz.completed_by_student?(user)).to eq(true)
   end
