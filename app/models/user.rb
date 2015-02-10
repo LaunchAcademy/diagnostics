@@ -22,4 +22,21 @@ class User < ActiveRecord::Base
   def admin?
     role == "admin"
   end
+
+  def total_answered_questions
+    AnswerSubmission.where(user: self).count
+  end
+
+  def total_correct_questions
+    AnswerSubmission.includes(:answer).where(answers: {correct: true}).count
+  end
+
+  def total_incorrect_questions
+    total_answered_questions - total_correct_questions
+  end
+
+  def incomplete_quizzes_count
+    Quiz.all.to_a.count { |quiz| !quiz.completed_by_student?(self) }
+  end
+
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :questions, only: [:new, :create, :index]
   end
 
-  resources :quizzes, only: [:show] do
+  resources :quizzes, only: [:show, :index] do
     resources :questions, only: [:index]
   end
 

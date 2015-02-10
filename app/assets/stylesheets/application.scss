@@ -5,6 +5,16 @@ li.answer input, li.answer {
   font-size: 50px;
 }
 
+table {
+  width: 100%;
+}
+
+.incomplete-alert {
+  text-align: center;
+  background-color: tomato;
+  padding: .5em;
+}
+
 .answer {
   &.correct .button {
     background-color: lime;

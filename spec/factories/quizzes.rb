@@ -7,6 +7,6 @@ FactoryGirl.define do
         create(:question_with_answers, quiz: quiz)
       end
     end
-
+    
   end
 end

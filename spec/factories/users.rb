@@ -12,9 +12,9 @@ FactoryGirl.define do
         quiz = create(:quiz_with_questions)
         quiz.questions.each do |question|
           create(:answer_submission,
-          user: user,
-          question: question,
-          answer: question.answers.find_by(correct: true))
+            user: user,
+            question: question,
+            answer: question.answers.find_by(correct: true))
         end
       end
     end

@@ -20,4 +20,50 @@ RSpec.describe User, type: :model do
 
     it { should validate_uniqueness_of(:uid).scoped_to(:provider) }
   end
+
+  describe "#total_answered_questions" do
+    it "returns user's total number of answered questions" do
+      user = FactoryGirl.create(:user_with_answered_quiz)
+
+      expect(user.total_answered_questions).to eq(1)
+    end
+  end
+
+  describe "#total_correct_questions" do
+    it "returns user's total number of correct questions" do
+      user = FactoryGirl.create(:user)
+      quiz = FactoryGirl.create(:quiz_with_questions)
+      question = quiz.questions.first
+      FactoryGirl.create(:answer_submission,
+        user: user,
+        answer: question.correct_answer
+      )
+
+      expect(user.total_correct_questions).to eq(1)
+    end
+  end
+
+  describe "#total_incorrect_questions" do
+    it "returns user's total number of incorrect questions" do
+      user = FactoryGirl.create(:user)
+      quiz = FactoryGirl.create(:quiz_with_questions)
+      question = quiz.questions.first
+      FactoryGirl.create(:answer_submission,
+        user: user,
+        answer: question.answers.last
+      )
+
+      expect(user.total_incorrect_questions).to eq(1)
+    end
+  end
+
+  describe "#incomplete_quizzes_count" do
+    it "returns user's number of incomplete quizzes" do
+      user = FactoryGirl.create(:user)
+      FactoryGirl.create(:quiz_with_questions)
+      FactoryGirl.create(:quiz_with_questions)
+
+      expect(user.incomplete_quizzes_count).to eq(2)
+    end
+  end
 end
