@@ -6,17 +6,17 @@
 # - incorrect answer n
 
 ---
-What language is the Rails framework written in?:
-- Ruby
-- jQuery
-- C++
-- SQL
+"What language is the Rails framework written in?":
+- "Ruby"
+- "jQuery"
+- "C++"
+- "SQL"
 
-What language do we use to input and retrieve data from a Relational Database?:
-- SQL
-- node
-- Javascript
-- Rust
+"What language do we use to input and retrieve data from a Relational Database?":
+- "SQL"
+- "node"
+- "Javascript"
+- "Rust"
 
 "`rm -rf /` is the best way to fix configuration issues.":
 - "true"

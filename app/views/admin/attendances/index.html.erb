@@ -1,0 +1,17 @@
+<h2>Attendence</h2>
+<h4>Date: <%= format_datetime(@date) %></h4>
+
+<h3>Present:</h3>
+<ul>
+  <% @present_students.each do |student| %>
+    <li><%= student.name %></li>
+  <% end %>
+</ul>
+
+
+<h3>Absent:</h3>
+<ul>
+  <% @absent_students.each do |student| %>
+  <li><%= student.name %></li>
+  <% end %>
+</ul>

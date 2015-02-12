@@ -6,7 +6,7 @@ feature "admin views question stats" do
     question = FactoryGirl.create(:question)
 
     sign_in(admin)
-    visit questions_path
+    visit admin_questions_path
 
     expect(page).to have_content(question.query)
     expect(page).to have_content(question.answer_submissions.count)

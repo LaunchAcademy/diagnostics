@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 20150212182354) do
     t.datetime "updated_at",                  null: false
   end
 
+  create_table "grades", force: :cascade do |t|
+    t.integer  "correct_count",   null: false
+    t.integer  "incorrect_count", null: false
+    t.integer  "quiz_id",         null: false
+    t.integer  "user_id",         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.text     "query",      null: false
     t.datetime "created_at", null: false

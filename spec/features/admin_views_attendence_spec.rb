@@ -10,7 +10,7 @@ Acceptance Criteria:
 * [] I can see a list of present students on a particular date.
 ) do
 
-  scenario "admin views attendence page and sees active students", focus: true do
+  scenario "admin views attendence page and sees active students" do
     admin = FactoryGirl.create(:user, role: "admin")
     student = FactoryGirl.create(:user_with_answered_quiz)
     sign_in(admin)
@@ -21,10 +21,12 @@ Acceptance Criteria:
     expect(page).to have_content(student.name)
   end
 
-  scenario "admin views attendence page and sees active students" do
+  scenario "admin views attendence page and sees inactive students" do
     admin = FactoryGirl.create(:user, role: "admin")
     student = FactoryGirl.create(:user)
-    click_on 'View Attendance'
+    sign_in(admin)
+    
+    click_link 'View Attendance'
 
     expect(page).to have_content("Absent")
     expect(page).to have_content(student.name)

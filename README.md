@@ -59,6 +59,14 @@ I want to see a summary of the quiz I have completed
 So that I know how well I understood the material.
 ```
 
+#### Acceptance Criteria
+* [x] User's total score for the quiz is displayed
+* [x] User's completion date for the quiz is displayed
+* [x] All questions in the quiz should be listed
+* [x] For each question, all answer options are listed
+* [x] Correct answer for each question is marked
+* [x] User's answer for each question is marked
+
 ### Student Index Page for Quizzes
 ```
 As a student

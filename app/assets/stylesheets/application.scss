@@ -1,7 +1,7 @@
 @import "foundation_and_overrides";
 @import "*";
 
-li.answer input {
+li.answer input, li.answer {
   font-size: 50px;
 }
 
@@ -13,4 +13,29 @@ table {
   text-align: center;
   background-color: tomato;
   padding: .5em;
+}
+
+.answer {
+  &.student-choice .button {
+    background-color: $alert-color;
+
+    &:after {
+      content:"X";
+      border: 3px solid white;
+      border-radius: 1em;
+      padding: .2em;
+      position: absolute;
+      right: .6em;
+      top: .6em;
+      width: 2em;
+    }
+  }
+
+  &.correct .button {
+    background-color: $success-color;
+  }
+
+  &.student-choice.correct .button:after {
+    content: "✓";
+  }
 }

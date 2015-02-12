@@ -1,4 +1,4 @@
-class Admin::AttendancesController
+class Admin::AttendancesController < ApplicationController
   def index
     if params[:date]
       @date = Chronic.parse(params[:date])
@@ -7,7 +7,7 @@ class Admin::AttendancesController
     end
 
     @attendance = DailyAttendanceReport.new(@date)
-    @absent_students = @attendance.absent_students.order(:name)
-    @present_students = @attendance.present_students.order(:name)
+    @absent_students = @attendance.absent_students
+    @present_students = @attendance.present_students
   end
 end

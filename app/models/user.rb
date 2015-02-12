@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   has_many :answer_submissions
+  has_many :grades
+  has_many :quizzes,
+    through: :grades
 
   validates :name, presence: true
   validates :provider, presence: true
@@ -28,19 +31,19 @@ class User < ActiveRecord::Base
   end
 
   def total_answered_questions
-    AnswerSubmission.where(user: self).count
+    total_correct_questions + total_incorrect_questions
   end
 
   def total_correct_questions
-    AnswerSubmission.includes(:answer).where(answers: {correct: true}).count
+    grades.inject(0) { |sum, grade| sum + grade.correct_count }
   end
 
   def total_incorrect_questions
-    total_answered_questions - total_correct_questions
+    grades.inject(0) { |sum, grade| sum + grade.incorrect_count }
   end
 
   def incomplete_quizzes_count
-    Quiz.all.to_a.count { |quiz| !quiz.completed_by_student?(self) }
+    (Quiz.all - quizzes).count
   end
 
 end

@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :attendances, only: [:index]
+    resources :questions, only: [:new, :create, :index]
+  end
+
+  resources :quizzes, only: [:show, :index] do
+    resources :questions, only: [:index]
   end
 
   resources :quizzes, only: [:show, :index]
 
-  resources :questions, only: [:new, :create, :show, :index] do
+  resources :questions, only: [:show] do
     resources :answers, only: [:new, :create]
   end
 
