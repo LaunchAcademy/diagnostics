@@ -9,7 +9,7 @@ RSpec.describe Grade, type: :model do
   it { should validate_presence_of(:user) }
   it { should validate_presence_of(:quiz) }
 
-  describe "#self.grade_user" do
+  describe "#self.grade_quiz" do
     it "returns user's count of correct vs. incorrect questions for a quiz" do
       user = FactoryGirl.create(:user)
       quiz = FactoryGirl.create(:quiz_with_questions)
@@ -19,7 +19,7 @@ RSpec.describe Grade, type: :model do
         answer: question.correct_answer
       )
 
-      grade = Grade.grade_user(quiz, user)
+      grade = Grade.grade_quiz(quiz, user)
 
       expect(grade.correct_count).to eq(1)
       expect(grade.incorrect_count).to eq(0)

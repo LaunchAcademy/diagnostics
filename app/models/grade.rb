@@ -7,7 +7,7 @@ class Grade < ActiveRecord::Base
   validates :user, presence: true
   validates :quiz, presence: true
 
-  def self.grade_user(quiz, user)
+  def self.grade_quiz(quiz, user)
     answer_subs = AnswerSubmission.where(user: user, question: quiz.questions)
 
     correct = answer_subs.inject(0) { |sum, a| sum + (a.answer.correct ? 1 : 0) }
