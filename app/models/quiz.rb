@@ -8,7 +8,7 @@ class Quiz < ActiveRecord::Base
   validates :name, uniqueness: true
 
   def completed_at(user)
-    AnswerSubmission.where(user: user, question: self.questions).last.created_at
+    grades.find_by(user: user).try(:created_at)
   end
 
   def completed_by_student?(user)
@@ -21,6 +21,6 @@ class Quiz < ActiveRecord::Base
   end
 
   def student_score(user)
-    grades.find_by(user: user).correct_count
+    grades.find_by(user: user).try(:correct_count) || 0
   end
 end

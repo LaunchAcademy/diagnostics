@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Quiz, type: :model do
+RSpec.describe Grade, type: :model do
   it { should belong_to(:user) }
   it { should belong_to(:quiz) }
 

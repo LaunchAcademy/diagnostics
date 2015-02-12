@@ -38,6 +38,8 @@ RSpec.describe User, type: :model do
         user: user,
         answer: question.correct_answer
       )
+      Grade.grade_user(quiz, user)
+      
 
       expect(user.total_correct_questions).to eq(1)
     end
@@ -52,6 +54,7 @@ RSpec.describe User, type: :model do
         user: user,
         answer: question.answers.last
       )
+      Grade.grade_user(quiz, user)
 
       expect(user.total_incorrect_questions).to eq(1)
     end

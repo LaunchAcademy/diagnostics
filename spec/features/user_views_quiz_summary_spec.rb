@@ -23,6 +23,7 @@ feature "user views quiz summary", %q(
       user: @user,
       answer: @question.correct_answer
     )
+    Grade.grade_user(@quiz, @user)
   end
 
   scenario "user views quiz summary page" do

@@ -16,6 +16,7 @@ FactoryGirl.define do
             question: question,
             answer: question.answers.find_by(correct: true))
         end
+        Grade.grade_user(quiz, user)
       end
     end
 
