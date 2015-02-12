@@ -1,12 +1,12 @@
 ---
-Who is the creator of Ruby?:
+"Who is the creator of Ruby?":
 - Yukihiro "Matz" Matsumoto
 - Tim Berners-Lee
 - Alan Turing
 - Sebastian Thrun
 
-Global variables start with a...:
-- $ (dollar sign)
-- @ (at sign)
-- @@ (double at sign)
-- _ (underscore)
+"Global variables start with a...":
+- "$ (dollar sign)"
+- "@ (at sign)"
+- "@@ (double at sign)"
+- "_ (underscore)"
