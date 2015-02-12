@@ -1,5 +1,8 @@
 class Quiz < ActiveRecord::Base
   has_many :questions
+  has_many :grades
+  has_many :users,
+    through: :grades
 
   validates :name, presence: true
   validates :name, uniqueness: true
@@ -18,6 +21,6 @@ class Quiz < ActiveRecord::Base
   end
 
   def student_score(user)
-    AnswerSubmission.includes(:answer).where(answers: { correct: true} ).count
+    grades.find_by(user: user).correct_count
   end
 end
