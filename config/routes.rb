@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :quizzes, only: [:show, :index]
+  namespace :admin do
+    resources :questions, only: [:new, :create, :index]
+  end
 
-  resources :questions, only: [:new, :create, :show, :index] do
+  resources :quizzes, only: [:show, :index] do
+    resources :questions, only: [:index]
+  end
+
+  resources :questions, only: [:show] do
     resources :answers, only: [:new, :create]
   end
 

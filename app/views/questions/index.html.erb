@@ -1,16 +1,22 @@
-<table>
-  <tr>
-    <th>Question</th>
-    <th>Correct Answer</th>
-    <th>Total Submissions</th>
-    <th>Correct Submissions</th>
-  </tr>
+<h1><%= @quiz.name %></h1>
+
+<h4>Your Total: <%= @quiz.student_score(current_user) %></h4>
+<h4>You completed this quiz on
+  <%= format_datetime(@quiz.completed_at(current_user)) %></h4>
+
+<ul>
   <% @questions.each do |question| %>
-    <tr>
-      <td><%= question.query %></td>
-      <td><%= question.correct_answer.try(:content) %></td>
-      <td><%= question.answer_submissions.count %></td>
-      <td><%= question.correct_submissions_count %></td>
-    </tr>
+    <hr />
+    <h2><%= question.query %></h2>
+    <!-- Question Answers -->
+    <ul class="small-block-grid-1 medium-block-grid-2">
+      <% question.answers.shuffle.each do |answer| %>
+        <li class="answer
+              <%= "correct" if answer.correct %>
+              <%= "student-choice" if answer == question.student_answer(current_user) %>">
+          <div class="button expand"><%= answer.content %></div>
+        </li>
+      <% end %>
+    </ul>
   <% end %>
-</table>
+</ul>

@@ -27,7 +27,7 @@
       <td><%= format_datetime(quiz.created_at) %></td>
       <td>
         <% if quiz.completed_by_student?(current_user) %>
-          <%= link_to "View Answers", root_path %>
+          <%= link_to "View Answers", quiz_questions_path(quiz) %>
         <% else %>
           <%= link_to "Complete Quiz Now", quiz_path(quiz) %>
         <% end %>
