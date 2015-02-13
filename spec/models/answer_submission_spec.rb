@@ -25,19 +25,30 @@ RSpec.describe AnswerSubmission, type: :model do
   end
 
   describe "#valid_time" do
-    # it "should return true if creation time is during workday" do
-    #   answer = FactoryGirl.build(:answer_submission)
-    #
-    #   expect(answer.valid_time?).to eq(true)
-    # end
+    it "should return true if creation time is during workday" do
+      Timecop.freeze(Time.local(2015, 2, 10, 9, 0, 0)) do  # 9AM Tuesday
+        answer = FactoryGirl.create(:answer_submission)
 
-    # it "should return false if creation time is not during workday", focus: true do
-    #   Timecop.freeze(Time.local(2015, 2, 10, 9, 0, 0)) do  # 9AM Tuesday
-    #     ActionDispatch::Request.any_instance.stub(:remote_ip).and_return("50.241.127.209")
-    #     answer = FactoryGirl.create(:answer_submission)
-    #     binding.pry
-    #     expect(answer.erro).to eq(false)
-    #   end
-    # end
+        expect(answer.valid_time?).to eq(true)
+      end
+    end
+  end
+
+  it "should raise an error if creation time is during evening" do
+    Timecop.freeze(Time.local(2015, 2, 10, 22, 0, 0)) do  # 10PM Tuesday
+      answer = FactoryGirl.build(:answer_submission)
+      answer.save
+
+      expect(answer.errors.full_messages).to include("Created at must be during the work day")
+    end
+  end
+
+  it "should raise an error if creation time is during weekend" do
+    Timecop.freeze(Time.local(2015, 2, 14, 9, 0, 0)) do  # 9AM Saturday
+      answer = FactoryGirl.build(:answer_submission)
+      answer.save
+
+      expect(answer.errors.full_messages).to include("Created at must be during the work day")
+    end
   end
 end

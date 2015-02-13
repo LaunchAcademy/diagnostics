@@ -39,4 +39,10 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.after_initialize do
+    # Set Time.now to Feb 10, 2014 09:00:00 AM
+    t = Time.local(2015, 2, 10, 9, 0, 0)
+    Timecop.freeze(t)
+  end
 end
