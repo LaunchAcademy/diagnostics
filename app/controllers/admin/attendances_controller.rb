@@ -1,7 +1,7 @@
 class Admin::AttendancesController < ApplicationController
   def index
     if params[:date]
-      @date = Chronic.parse(params[:date])
+      @date = Date.parse(params[:date])
     else
       @date = Date.current
     end

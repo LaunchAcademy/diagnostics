@@ -1,5 +1,9 @@
 <h2>Attendence</h2>
-<h6>Date: <%= format_datetime(@date) %></h6>
+<%= form_tag admin_attendances_path, method: :get do %>
+  <%= label_tag :date %>
+  <%= date_field_tag :date, @date %>
+  <%= submit_tag "Submit" %>
+<% end %>
 
 <div class="columns medium-6">
   <div class="panel">

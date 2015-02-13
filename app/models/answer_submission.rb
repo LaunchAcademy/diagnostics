@@ -1,5 +1,4 @@
 class AnswerSubmission < ActiveRecord::Base
-  LOCAL_IP = "50.241.127.209"
 
   belongs_to :user
   belongs_to :question
@@ -20,7 +19,7 @@ class AnswerSubmission < ActiveRecord::Base
   end
 
   def valid_location?
-    ip == LOCAL_IP
+    ip == ENV['LAUNCH_ACADEMY_IP']
   end
 
   # def valid_time?
