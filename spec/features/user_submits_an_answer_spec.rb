@@ -5,8 +5,8 @@ feature "user submits an answer" do
   let(:question) { FactoryGirl.create(:question_with_answers) }
 
   scenario "user submits a correct answer" do
-    Timecop.freeze(Time.local(2014, 7, 21, 9, 0, 0)) do  # 9AM Monday
-      page.driver.options[:headers] = {'REMOTE_IP' => "10.0.0.256"}
+    Timecop.freeze(Time.local(2015, 2, 10, 9, 0, 0)) do  # 9AM Tuesday
+      ActionDispatch::Request.any_instance.stub(:remote_ip).and_return("50.241.127.209")
       sign_in(user)
 
       visit question_path(question)
@@ -17,8 +17,8 @@ feature "user submits an answer" do
   end
 
   scenario "user submits an incorrect answer" do
-    Timecop.freeze(Time.local(2014, 7, 21, 9, 0, 0)) do  # 9AM Monday
-      page.driver.options[:headers] = {'REMOTE_IP' => "10.0.0.256"}
+    Timecop.freeze(Time.local(2015, 2, 10, 9, 0, 0)) do  # 9AM Tuesday
+      ActionDispatch::Request.any_instance.stub(:remote_ip).and_return("50.241.127.209")
       sign_in(user)
 
       visit question_path(question)
@@ -29,8 +29,8 @@ feature "user submits an answer" do
   end
 
   scenario "user tries same question twice" do
-    Timecop.freeze(Time.local(2014, 7, 21, 9, 0, 0)) do  # 9AM Monday
-      page.driver.options[:headers] = {'REMOTE_IP' => "10.0.0.256"}
+    Timecop.freeze(Time.local(2015, 2, 10, 9, 0, 0)) do  # 9AM Tuesday
+      ActionDispatch::Request.any_instance.stub(:remote_ip).and_return("50.241.127.209")
       sign_in(user)
 
       visit question_path(question)

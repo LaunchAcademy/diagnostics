@@ -4,7 +4,7 @@ class AnswerSubmissionsController < ApplicationController
     @answer_submission.user = current_user
     @answer_submission.question = @answer_submission.answer.question
     @answer_submission.ip = request.remote_ip
-
+    
     if @answer_submission.save
       if @answer_submission.answer.correct?
         flash[:success] = "Correct!"

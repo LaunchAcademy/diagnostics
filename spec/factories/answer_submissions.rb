@@ -3,6 +3,6 @@ FactoryGirl.define do
     user
     answer
     question { answer.question }
-    ip "10.0.0.256"
+    ip "50.241.127.209"
   end
 end
