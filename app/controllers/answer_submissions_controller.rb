@@ -4,7 +4,7 @@ class AnswerSubmissionsController < ApplicationController
     @answer_submission.user = current_user
     @answer_submission.question = @answer_submission.answer.question
     @answer_submission.ip = request.remote_ip
-    
+
     if @answer_submission.save
       if @answer_submission.answer.correct?
         flash[:success] = "Correct!"
@@ -22,11 +22,11 @@ class AnswerSubmissionsController < ApplicationController
       else
         flash[:info] = "#{quiz.name} complete."
         Grade.grade_quiz(quiz, current_user)
-        redirect_to root_path
+        redirect_to quizzes_path
       end
     else
       flash[:alert] = @answer_submission.errors.messages.values.flatten.join(' ')
-      redirect_to root_path
+      redirect_to quizzes_path
     end
   end
 

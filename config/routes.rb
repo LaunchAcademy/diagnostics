@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   get "/auth/failure" => "sessions#create"
   get "/sign_out" => 'sessions#destroy', as: :sign_out
 
-  root "quizzes#index"
+  root "home#show"
 end
