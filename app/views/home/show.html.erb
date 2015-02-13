@@ -1,1 +1,28 @@
-<h1>Home</h1>
+<h1>Welcome to Diagnostics!</h1>
+
+<p>
+  Diagnostics is an application for completing short daily quizzes as a learning
+  tool for reviewing a day's lecture materials.
+</p>
+
+<p>
+  Visit the list of all quizzes each day to complete the day's material, and to
+  make sure you haven't missed any quizzes. After a quiz is complete, you can view your
+  reponses, see the correct answers, and check out further information on each
+  question for review.
+</p>
+
+<p>
+  Your responses will also be used for recording your daily attendance, so make
+  sure to fill out the quiz each day! You won't be able to complete quizzes from
+  outside Launch Academy, so make sure not to forget.
+</p>
+
+<p>
+  <% if current_user %>
+    <%= link_to "View your quizzes", quizzes_path %>
+  <% else %>
+    <%= link_to "Sign in with GitHub", "/auth/github" %>
+  <% end %>
+  to get started!
+</p>
