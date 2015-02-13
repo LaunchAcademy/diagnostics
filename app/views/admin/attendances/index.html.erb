@@ -1,28 +1,35 @@
 <h2>Attendence</h2>
 <%= form_tag admin_attendances_path, method: :get do %>
-  <%= label_tag :date %>
-  <%= date_field_tag :date, @date %>
-  <%= submit_tag "Submit" %>
-<% end %>
-
-<div class="columns medium-6">
-  <div class="panel">
-    <h3>Present:</h3>
-    <ul>
-      <% @present_students.each do |student| %>
-        <li><%= student.name %></li>
-      <% end %>
-    </ul>
+  <div class="row collapse">
+    <%= label_tag :date %>
+    <div class="medium-4 columns">
+      <%= date_field_tag :date, @date %>
+    </div>
+    <div class="medium-2 end columns">
+      <%= submit_tag "Submit", class: "button postfix" %>
+    </div>
   </div>
-</div>
+<% end %>
+<div class="row">
+  <div class="columns medium-6">
+    <div class="panel">
+      <h3>Present:</h3>
+      <ul>
+        <% @present_students.each do |student| %>
+          <li><%= student.name %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 
-<div class="columns medium-6">
-  <div class="panel">
-    <h3>Absent:</h3>
-    <ul>
-      <% @absent_students.each do |student| %>
-      <li><%= student.name %></li>
-      <% end %>
-    </ul>
+  <div class="columns medium-6">
+    <div class="panel">
+      <h3>Absent:</h3>
+      <ul>
+        <% @absent_students.each do |student| %>
+        <li><%= student.name %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
