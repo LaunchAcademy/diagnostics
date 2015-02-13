@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.5'
 
 gem 'rails', '4.2.0'
 gem 'pg'
@@ -11,6 +11,10 @@ gem 'jquery-rails'
 gem 'omniauth-github'
 gem 'foundation-rails'
 gem 'rails_12factor', group: :production
+
+gem 'omniauth-launch-pass',
+  github: 'launchacademy/omniauth-launch-pass'
+
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
