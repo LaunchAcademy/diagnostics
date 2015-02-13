@@ -7,7 +7,7 @@ feature "user starts a quiz" do
   let!(:second_question) { FactoryGirl.create(:question_with_answers, quiz: quiz) }
 
   scenario "user answers a sequence of questions" do
-    ActionDispatch::Request.any_instance.stub(:remote_ip).and_return("50.241.127.209")
+    ActionDispatch::Request.any_instance.stub(:remote_ip).and_return(ENV['LAUNCH_ACADEMY_IP'])
     sign_in(user)
     visit quiz_path(quiz)
     click_on first_question.answers.first.content
