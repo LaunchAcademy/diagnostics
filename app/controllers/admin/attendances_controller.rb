@@ -1,4 +1,4 @@
-class Admin::AttendancesController < ApplicationController
+class Admin::AttendancesController < AdminController
   def index
     if params[:date]
       @date = Date.parse(params[:date])

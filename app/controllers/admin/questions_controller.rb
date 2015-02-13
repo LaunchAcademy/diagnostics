@@ -1,6 +1,4 @@
-class Admin::QuestionsController < ApplicationController
-  before_action :authorize_admin
-
+class Admin::QuestionsController < AdminController
   def index
     @questions = Question.all.limit(20)
   end
