@@ -10,7 +10,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'omniauth-github'
 gem 'foundation-rails'
-gem 'chronic'
 gem 'rails_12factor', group: :production
 
 group :development, :test do
