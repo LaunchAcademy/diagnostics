@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :user do
-    provider "github"
+    provider "launch_pass"
     sequence(:uid) { |n| "#{1000 + n}" }
     sequence(:name) { |n| "generic user ##{n}" }
     sequence(:email) { |n| "generic_user#{n}@gmail.com" }

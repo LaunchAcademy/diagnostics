@@ -16,10 +16,9 @@ RSpec.describe Quiz, type: :model do
         user: user,
         answer: question.correct_answer
       )
-      grade = Grade.grade_quiz(quiz, user)
+      Grade.grade_quiz(quiz, user)
 
-      time = Time.now.round
-      expect(quiz.completed_at(user).round).to eq(time)
+      expect(quiz.completed_at(user)).to be_within(1.second).of(Time.now)
     end
   end
 
@@ -30,7 +29,7 @@ RSpec.describe Quiz, type: :model do
         user: user,
         answer: question.correct_answer
       )
-      grade = Grade.grade_quiz(quiz, user)
+      Grade.grade_quiz(quiz, user)
 
       expect(quiz.completed_by_student?(user)).to eq(true)
     end
@@ -48,7 +47,7 @@ RSpec.describe Quiz, type: :model do
         user: user,
         answer: question.correct_answer
       )
-      grade = Grade.grade_quiz(quiz, user)
+      Grade.grade_quiz(quiz, user)
 
       expect(quiz.student_score(user)).to eq(1)
     end

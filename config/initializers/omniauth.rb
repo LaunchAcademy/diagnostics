@@ -1,6 +1,3 @@
-#Rails.application.config.middleware.use OmniAuth::Builder do
-  #provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
-#end
 launch_pass_sites = {
   development: 'http://localhost:3001/',
   staging: 'https://launch-pass-staging.herokuapp.com',
@@ -13,5 +10,3 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       site: launch_pass_sites[Rails.env.to_sym]
     }
 end
-
-#

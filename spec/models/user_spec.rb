@@ -14,10 +14,7 @@ RSpec.describe User, type: :model do
   it { should_not have_valid(:role).when(nil, "") }
 
   context "uniqueness" do
-    before(:each) do
-      user = FactoryGirl.create(:user)
-    end
-
+    subject { FactoryGirl.create(:user) }
     it { should validate_uniqueness_of(:uid).scoped_to(:provider) }
   end
 
@@ -39,7 +36,6 @@ RSpec.describe User, type: :model do
         answer: question.correct_answer
       )
       Grade.grade_quiz(quiz, user)
-      
 
       expect(user.total_correct_questions).to eq(1)
     end

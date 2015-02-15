@@ -6,14 +6,14 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
   validates :provider, presence: true
-  validates :provider, inclusion: { in: %w(github) }
+  validates :provider, inclusion: { in: %w(launch_pass) }
   validates :uid, presence: true
   validates :uid, uniqueness: { scope: :provider }
   validates :role, inclusion: { in: %w(student admin) }
 
   def self.find_or_create_via_omniauth(auth)
     return nil if auth.nil? || auth.empty?
-
+    binding.pry
     user = User.find_or_initialize_by(provider: auth['provider'], uid: auth['uid'])
     user.name = auth['info']['name']
     user.email = auth['info']['email']
