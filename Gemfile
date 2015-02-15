@@ -1,28 +1,29 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-ruby '2.1.5'
+ruby "2.1.5"
 
-gem 'rails', '4.2.0'
-gem 'pg'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
-gem 'omniauth-github'
-gem 'foundation-rails'
-gem 'rails_12factor', group: :production
-
-gem 'omniauth-launch-pass',
-  github: 'launchacademy/omniauth-launch-pass'
-
+gem "coffee-rails", "~> 4.1.0"
+gem "foundation-rails"
+gem "jquery-rails"
+gem "omniauth-github"
+gem "omniauth-launch-pass",
+  github: "launchacademy/omniauth-launch-pass"
+gem "pg"
+gem "rails", "4.2.0"
+gem "sass-rails", "~> 5.0"
+gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
-  gem 'capybara'
-  gem 'pry-rails'
-  gem 'factory_girl_rails', '~> 4.0'
-  gem 'launchy'
-  gem 'valid_attribute'
-  gem 'shoulda-matchers'
-  gem 'dotenv-rails'
+  gem "capybara"
+  gem "dotenv-rails"
+  gem "factory_girl_rails", "~> 4.0"
+  gem "launchy"
+  gem "pry-rails"
+  gem "rspec-rails", "~> 3.0"
+  gem "shoulda-matchers"
+  gem "valid_attribute"
+end
+
+group :production do
+  gem "rails_12factor"
 end
