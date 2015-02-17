@@ -14,7 +14,7 @@ class AnswerSubmission < ActiveRecord::Base
       message: "You already answered that question."
     }
 
-  validate :ip_must_be_local
+  validate :ip_must_be_local if Rails.env.production?
 
   def self.on_date(date)
     where('DATE(created_at) = ?', date)
