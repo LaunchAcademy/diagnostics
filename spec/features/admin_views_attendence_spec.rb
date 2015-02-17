@@ -15,26 +15,30 @@ feature "Admin Views Attendance Page", %(
   scenario "admin views attendence page and sees active students" do
     admin = FactoryGirl.create(:user, role: "admin")
     student = FactoryGirl.create(:user_with_answered_quiz)
+    student_name = "#{student.first_name} #{student.last_name}"
+
     sign_in(admin)
 
     click_link 'View Attendance'
 
     within(".columns.medium-6:first-child") do
       expect(page).to have_content("Present")
-      expect(page).to have_content(student.name)
+      expect(page).to have_content(student_name)
     end
   end
 
   scenario "admin views attendence page and sees inactive students" do
     admin = FactoryGirl.create(:user, role: "admin")
     student = FactoryGirl.create(:user)
+    student_name = "#{student.first_name} #{student.last_name}"
+
     sign_in(admin)
 
     click_link 'View Attendance'
 
     within(".columns.medium-6:last-child") do
       expect(page).to have_content("Absent")
-      expect(page).to have_content(student.name)
+      expect(page).to have_content(student_name)
     end
   end
 
@@ -45,10 +49,11 @@ feature "Admin Views Attendance Page", %(
       user: student,
       created_at: DateTime.parse("2015/02/09 09:00 +0500")
     )
+    student_name = "#{student.first_name} #{student.last_name}"
 
     sign_in(admin)
 
-    expect(page).to_not have_content(student.name)
+    expect(page).to_not have_content(student_name)
 
     click_link 'View Attendance'
     fill_in "Date", with: "2015/02/09"
@@ -56,7 +61,7 @@ feature "Admin Views Attendance Page", %(
 
     within(".columns.medium-6:first-child") do
       expect(page).to have_content("Present")
-      expect(page).to have_content(student.name)
+      expect(page).to have_content(student_name)
     end
   end
 end

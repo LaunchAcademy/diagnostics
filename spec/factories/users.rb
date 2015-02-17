@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :user do
-    provider "github"
+    provider "launch_pass"
     sequence(:uid) { |n| "#{1000 + n}" }
-    sequence(:name) { |n| "generic user ##{n}" }
     sequence(:email) { |n| "generic_user#{n}@gmail.com" }
-    image "http://i.imgur.com/ZWvTHhD.jpg"
+    first_name "Bob"
+    last_name "Smith"
     role "student"
 
     factory :user_with_answered_quiz do

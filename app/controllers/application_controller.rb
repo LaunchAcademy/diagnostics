@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def authorize_user
     session[:return_to] = request.url
     unless current_user
-      redirect_to "/auth/github"
+      redirect_to "/auth/launch_pass"
     end
   end
 end

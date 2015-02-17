@@ -4,9 +4,8 @@ class User < ActiveRecord::Base
   has_many :quizzes,
     through: :grades
 
-  validates :name, presence: true
   validates :provider, presence: true
-  validates :provider, inclusion: { in: %w(github) }
+  validates :provider, inclusion: { in: %w(launch_pass) }
   validates :uid, presence: true
   validates :uid, uniqueness: { scope: :provider }
   validates :role, inclusion: { in: %w(student admin) }
@@ -15,9 +14,9 @@ class User < ActiveRecord::Base
     return nil if auth.nil? || auth.empty?
 
     user = User.find_or_initialize_by(provider: auth['provider'], uid: auth['uid'])
-    user.name = auth['info']['name']
+    user.first_name = auth['info']['first_name']
+    user.last_name = auth['info']['last_name']
     user.email = auth['info']['email']
-    user.image = auth['info']['image']
     user.save!
     user
   end

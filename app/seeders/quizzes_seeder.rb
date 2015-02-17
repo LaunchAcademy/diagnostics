@@ -27,6 +27,7 @@ class QuizzesSeeder
   end
 
   private
+
   def load_questions_data
     File.open(@yaml_file, "r") do |file|
       Rails.logger.info "Loading YAML file: #{@yaml_file}"
