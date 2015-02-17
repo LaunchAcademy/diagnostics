@@ -10,7 +10,8 @@ module AuthenticationHelper
       provider: user.provider,
       uid: user.uid,
       info: {
-        name: user.name,
+        first_name: user.first_name,
+        last_name: user.last_name,
         email: user.email,
         image: user.image
       }

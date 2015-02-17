@@ -10,7 +10,7 @@ feature "user authentication", focus: true do
   scenario "user signs in" do
     visit root_path
     click_on "Sign in with LaunchPass"
-    expect(page).to have_content("Welcome, #{user.name}!")
+    expect(page).to have_content("Welcome, #{user.email}!")
   end
 
   scenario "user signs out" do
