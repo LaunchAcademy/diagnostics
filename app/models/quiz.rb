@@ -15,7 +15,7 @@ class Quiz < ActiveRecord::Base
     questions.all? do |question|
       completed_answers = AnswerSubmission.
         includes(:question).
-        where(user: user, question: question, questions: { quiz_id: self.id })
+        where(user: user, question: question, questions: { quiz_id: id })
       !completed_answers.empty?
     end
   end

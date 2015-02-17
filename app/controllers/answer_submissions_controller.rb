@@ -25,12 +25,14 @@ class AnswerSubmissionsController < ApplicationController
         redirect_to quizzes_path
       end
     else
-      flash[:alert] = @answer_submission.errors.messages.values.flatten.join(' ')
+      flash[:alert] = @answer_submission.errors.
+        messages.values.flatten.join(' ')
       redirect_to quizzes_path
     end
   end
 
   protected
+
   def answer_submission_params
     params.require(:answer_submission).permit(:answer_id)
   end

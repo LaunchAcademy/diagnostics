@@ -16,7 +16,7 @@ class Question < ActiveRecord::Base
     answer_submissions.each do |submission|
       result += 1 if submission.answer.correct?
     end
-    return result
+    result
   end
 
   def student_answer(user)
@@ -26,5 +26,4 @@ class Question < ActiveRecord::Base
       end
     end
   end
-
 end

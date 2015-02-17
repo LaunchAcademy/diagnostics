@@ -14,7 +14,6 @@ feature "user views quiz summary", %q(
   [x] User's answer for each question is marked
 ) do
 
-
   before(:each) do
     @user = FactoryGirl.create(:user)
     @quiz = FactoryGirl.create(:quiz_with_questions)
@@ -40,5 +39,4 @@ feature "user views quiz summary", %q(
     expect(page).to have_selector(".answer.student-choice")
     expect(page).to have_selector(".answer.correct")
   end
-
 end

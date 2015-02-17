@@ -8,8 +8,11 @@ class AnswerSubmission < ActiveRecord::Base
   validates :question, presence: true
   validates :answer, presence: true
 
-  validates :user, uniqueness: { scope: :question,
-    message: "You already answered that question." }
+  validates :user,
+    uniqueness: {
+      scope: :question,
+      message: "You already answered that question."
+    }
 
   validate :ip_must_be_local
 

@@ -3,8 +3,14 @@ require "rails_helper"
 feature "user starts a quiz" do
   let(:user) { FactoryGirl.create(:user) }
   let!(:quiz) { FactoryGirl.create(:quiz) }
-  let!(:first_question) { FactoryGirl.create(:question_with_answers, quiz: quiz) }
-  let!(:second_question) { FactoryGirl.create(:question_with_answers, quiz: quiz) }
+
+  let!(:first_question) do
+    FactoryGirl.create(:question_with_answers, quiz: quiz)
+  end
+
+  let!(:second_question) do
+    FactoryGirl.create(:question_with_answers, quiz: quiz)
+  end
 
   scenario "user answers a sequence of questions" do
     ActionDispatch::Request.any_instance.stub(:remote_ip).and_return(ENV['LAUNCH_ACADEMY_IP'])

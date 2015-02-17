@@ -24,5 +24,4 @@ class Admin::QuestionsController < AdminController
   def question_params
     params.require(:question).permit(:query)
   end
-
 end
