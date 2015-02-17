@@ -20,8 +20,9 @@ class AnswerSubmissionsController < ApplicationController
       if next_question
         redirect_to next_question
       else
-        flash[:info] = "#{quiz.name} complete."
         Grade.grade_quiz(quiz, current_user)
+
+        flash[:info] = "#{quiz.name} complete."
         redirect_to quizzes_path
       end
     else
