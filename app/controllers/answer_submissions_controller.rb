@@ -24,8 +24,8 @@ class AnswerSubmissionsController < ApplicationController
         redirect_to root_path
       end
     else
-      flash[:alert] = @answer_submission.errors
-        .messages.values.flatten.join(' ')
+      flash[:alert] = @answer_submission.errors.
+        messages.values.flatten.join(' ')
       redirect_to root_path
     end
   end
