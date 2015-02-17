@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
     role == "admin"
   end
 
+  def is_present?(date=Date.current)
+    AnswerSubmission.on_date(date).where(user: self).count > 0
+  end
+
   def total_answered_questions
     total_correct_questions + total_incorrect_questions
   end

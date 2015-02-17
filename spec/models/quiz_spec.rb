@@ -36,6 +36,16 @@ RSpec.describe Quiz, type: :model do
     end
 
     it "returns false if it has not been completed by a student" do
+      expect(quiz.completed_by_student?(user)).to eq(false)
+    end
+
+    it "returns false if it has been partially completed by a student" do
+      FactoryGirl.create(:question_with_answers, quiz: quiz)
+      question = quiz.questions.first
+      FactoryGirl.create(:answer_submission,
+        user: user,
+        answer: question.correct_answer
+      )
 
       expect(quiz.completed_by_student?(user)).to eq(false)
     end

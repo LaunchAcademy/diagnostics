@@ -5,6 +5,7 @@ feature "user submits an answer" do
   let(:question) { FactoryGirl.create(:question_with_answers) }
 
   scenario "user submits a correct answer" do
+    ActionDispatch::Request.any_instance.stub(:remote_ip).and_return(ENV['LAUNCH_ACADEMY_IP'])
     sign_in(user)
 
     visit question_path(question)
@@ -14,6 +15,7 @@ feature "user submits an answer" do
   end
 
   scenario "user submits an incorrect answer" do
+    ActionDispatch::Request.any_instance.stub(:remote_ip).and_return(ENV['LAUNCH_ACADEMY_IP'])
     sign_in(user)
 
     visit question_path(question)
@@ -23,6 +25,7 @@ feature "user submits an answer" do
   end
 
   scenario "user tries same question twice" do
+    ActionDispatch::Request.any_instance.stub(:remote_ip).and_return(ENV['LAUNCH_ACADEMY_IP'])
     sign_in(user)
 
     visit question_path(question)

@@ -3,5 +3,6 @@ FactoryGirl.define do
     user
     answer
     question { answer.question }
+    ip ENV['LAUNCH_ACADEMY_IP']
   end
 end

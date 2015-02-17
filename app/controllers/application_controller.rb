@@ -14,11 +14,4 @@ class ApplicationController < ActionController::Base
       redirect_to "/auth/github"
     end
   end
-
-  def authorize_admin
-    if !current_user || !current_user.admin?
-      flash[:alert] = 'Unauthorized.'
-      redirect_to root_path
-    end
-  end
 end
