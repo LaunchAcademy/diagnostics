@@ -7,7 +7,7 @@ gem "foundation-rails"
 gem "jquery-rails"
 gem "omniauth-github"
 gem "omniauth-launch-pass",
-  github: "launchacademy/omniauth-launch-pass"
+  github: "LaunchAcademy/omniauth-launch-pass"
 gem "pg"
 gem "rails", "4.2.0"
 gem "sass-rails", "~> 5.0"
@@ -15,7 +15,7 @@ gem "uglifier", ">= 1.3.0"
 
 group :development do
   gem "launchcop",
-    git: "https://github.com/LaunchAcademy/launchcop.git"
+    github: "LaunchAcademy/launchcop"
 end
 
 group :development, :test do
