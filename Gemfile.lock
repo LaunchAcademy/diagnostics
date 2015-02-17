@@ -5,8 +5,9 @@ GIT
     omniauth-launch-pass (0.0.1)
       omniauth-oauth2 (~> 1.2)
 
-PATH
-  remote: /Users/rd/Dropbox/launch/launchcop
+GIT
+  remote: https://github.com/LaunchAcademy/launchcop.git
+  revision: 7cf12d5064981313ab790b07a0da0293830bbac5
   specs:
     launchcop (0.0.3)
       rubocop
