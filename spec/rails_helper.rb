@@ -17,10 +17,4 @@ RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
-
-  config.before(:suite) do
-    # Set Time.now to Feb 10, 2014 09:00:00 AM
-    t = Time.local(2015, 2, 10, 9, 0, 0)
-    Timecop.freeze(t)
-  end
 end

@@ -40,17 +40,23 @@ feature "Admin Views Attendance Page", %(
 
   scenario "admin views attendence page for a past date" do
     admin = FactoryGirl.create(:user, role: "admin")
-    Timecop.freeze(Time.local(2015, 2, 9, 9, 0, 0)) do  # 9AM Monday
-      @student = FactoryGirl.create(:user_with_answered_quiz)
-    end
+    student = FactoryGirl.create(:user)
+    FactoryGirl.create(:answer_submission,
+      user: student,
+      created_at: DateTime.parse("2015/02/09 09:00 +0500")
+    )
 
     sign_in(admin)
-    expect(page).to have_no_content(@student.name)
+
+    expect(page).to_not have_content(student.name)
 
     click_link 'View Attendance'
-    fill_in "Date", with: "02/09/2015"
+    fill_in "Date", with: "2015/02/09"
     click_on "Submit"
 
-    expect(page).to have_content(@student.name)
+    within(".columns.medium-6:first-child") do
+      expect(page).to have_content("Present")
+      expect(page).to have_content(student.name)
+    end
   end
 end

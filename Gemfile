@@ -22,7 +22,3 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'dotenv-rails'
 end
-
-group :test do
-  gem 'timecop'
-end
