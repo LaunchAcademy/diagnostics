@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 feature "Instructor Inputs a Question", %(
   As an instructor
   I want to add a new question

@@ -40,5 +40,4 @@ feature "user views quiz summary", %q(
     expect(page).to have_selector(".answer.student-choice")
     expect(page).to have_selector(".answer.correct")
   end
-
 end

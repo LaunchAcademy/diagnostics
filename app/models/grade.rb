@@ -10,13 +10,19 @@ class Grade < ActiveRecord::Base
   def self.grade_quiz(quiz, user)
     answer_subs = AnswerSubmission.where(user: user, question: quiz.questions)
 
-    correct = answer_subs.inject(0) { |sum, a| sum + (a.answer.correct ? 1 : 0) }
-    incorrect = answer_subs.inject(0) { |sum, a| sum + (!a.answer.correct ? 1 : 0) }
+    correct = answer_subs.inject(0) do |sum, a|
+      sum + (a.answer.correct ? 1 : 0)
+    end
 
-    create(correct_count: correct,
+    incorrect = answer_subs.inject(0) do |sum, a|
+      sum + (!a.answer.correct ? 1 : 0)
+    end
+
+    create(
+      correct_count: correct,
       incorrect_count: incorrect,
       user: user,
-      quiz: quiz)
+      quiz: quiz
+    )
   end
-
 end

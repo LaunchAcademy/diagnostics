@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
   def self.find_or_create_via_omniauth(auth)
     return nil if auth.nil? || auth.empty?
 
-    user = User.find_or_initialize_by(provider: auth['provider'], uid: auth['uid'])
+    user_params = { provider: auth['provider'], uid: auth['uid'] }
+    user = User.find_or_initialize_by(user_params)
     user.first_name = auth['info']['first_name']
     user.last_name = auth['info']['last_name']
     user.email = auth['info']['email']
@@ -40,5 +41,4 @@ class User < ActiveRecord::Base
   def incomplete_quizzes_count
     (Quiz.all - quizzes).count
   end
-
 end
