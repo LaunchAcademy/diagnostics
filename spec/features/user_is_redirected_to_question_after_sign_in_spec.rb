@@ -14,7 +14,7 @@ feature "user is redirected to question after sign in" do
   end
 
   scenario "unauthenticated user attempts to visit a question" do
-    OmniAuth.config.mock_auth[:github] = :invalid_credentials
+    OmniAuth.config.mock_auth[:launch_pass] = :invalid_credentials
     visit question_path(question)
     expect(page).to have_content("Error signing in!")
   end

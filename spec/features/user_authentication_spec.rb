@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "user authentication", focus: true do
+feature "user authentication" do
   let(:user) { FactoryGirl.create(:user) }
 
   before(:each) do

@@ -4,7 +4,7 @@ An application that allows instructors to easily create and administer multiple-
 Inspired by a chapter in [_Make it Stick: The Science of Successful Learning_](http://www.hup.harvard.edu/catalog.php?isbn=9780674729018) in which students test scores rose an entire letter grade, simply by implementing short, post-lecture quizzes.
 
 ## Features
-* GitHub Authentication
+* [LaunchPass](https://launchpass.launchacademy.com/) Authentication
 * Loading of YAML-formatted Quizzes from lib/assets/quizzes via `rake db:seed`
 * User sees completed/uncompleted Quizzes after sigining in.
 

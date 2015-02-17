@@ -1,5 +1,4 @@
 launch_pass_sites = {
-  test: 'http://localhost:3001/',
   development: 'http://localhost:3001/',
   staging: 'https://launch-pass-staging.herokuapp.com',
   production: 'https://launchpass.launchacademy.com'
