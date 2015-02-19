@@ -1,0 +1,21 @@
+"Is POST just another kind of GET request?":
+- "false"
+- "true"
+
+"What is different about a POST vs GET request?":
+- "POST has a Body but GET does not"
+- "The Host for a POST is the browser"
+- "A POST request must be made by the Postal Service"
+- "A GET is more complex than a POST"
+
+"What component in a Web Application architecture receives a POST?":
+- "The Server"
+- "The Client"
+- "The Database"
+- "The Post Office"
+
+"What are common ways to submit a POST request?":
+- "HTML Form"
+- "A letter in the mail"
+- "GET requesting the form"
+- "Email POST to the server"

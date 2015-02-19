@@ -9,7 +9,7 @@ feature "user submits an answer" do
     sign_in(user)
 
     visit question_path(question)
-    click_on "Ruby"
+    click_answer "Ruby"
 
     expect(page).to have_content("Correct!")
   end
@@ -19,7 +19,7 @@ feature "user submits an answer" do
     sign_in(user)
 
     visit question_path(question)
-    click_on "SQL"
+    click_answer "SQL"
 
     expect(page).to have_content("Sorry, that was incorrect.")
   end
@@ -29,10 +29,14 @@ feature "user submits an answer" do
     sign_in(user)
 
     visit question_path(question)
-    click_on "SQL"
+    click_answer "SQL"
     visit question_path(question)
-    click_on "SQL"
+    click_answer "SQL"
 
     expect(page).to have_content("You already answered that question.")
   end
+end
+
+def click_answer(content)
+  find(".answer_#{Answer.find_by(content: content).id}").click
 end
