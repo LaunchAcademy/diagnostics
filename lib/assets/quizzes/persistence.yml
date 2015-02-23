@@ -1,0 +1,55 @@
+---
+"Which of the following is not a Relational Database Management System (RDBMS)?":
+- "Redis"
+- "SQLite"
+- "Postgres"
+- "MS SQL Server"
+
+"All of the following are true of a Relational Database, except...":
+- "A relational database builds its schema, automatically."
+- "A relational database is made of related tables."
+- "Record attributes are defined by table columns."
+- "Record values are stored in table rows."
+
+"The 'C' in 'CRUD' stands for...":
+- "Create"
+- "Corrupt"
+- "Continue"
+- "Column"
+
+"The 'R' in 'CRUD' stands for...":
+- "Read"
+- "Rename"
+- "Render"
+- "Rewrite"
+
+"Which of the following is not a SQL datatype?":
+- "LOCATION"
+- "INTEGER"
+- "BOOLEAN"
+- "VARCHAR"
+
+"If we want to add data to a table, we use which SQL keyword?":
+- "INSERT"
+- "UPDATE"
+- "SELECT"
+- "DELETE"
+
+"If we want to permanently remove data from a table, we use which SQL keyword?":
+- "DELETE"
+- "INSERT"
+- "UPDATE"
+- "SELECT"
+
+"A unique value that points to data in another table is called a...":
+- "Foreign key"
+- "Primary key"
+- "Null constraint"
+- "Database column"
+
+"A unique value that is used to identify and distinguish data in the same table is called a...":
+- "Primary key"
+- "Foreign key"
+- "Null constraint"
+- "Database column"
+
