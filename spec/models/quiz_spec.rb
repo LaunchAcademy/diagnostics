@@ -62,4 +62,27 @@ RSpec.describe Quiz, type: :model do
       expect(quiz.student_score(user)).to eq(1)
     end
   end
+
+  describe "#first_unanswered_question" do
+    it "returns a student's first unanswered question" do
+      first_question = quiz.questions.first
+      FactoryGirl.create(:answer_submission,
+        user: user,
+        answer: first_question.correct_answer
+      )
+      second_question = FactoryGirl.create(:question_with_answers, quiz: quiz)
+
+      expect(quiz.first_unanswered_question(user)).to eq(second_question)
+    end
+
+    it "returns nil if student has answered all questions" do
+      first_question = quiz.questions.first
+      FactoryGirl.create(:answer_submission,
+      user: user,
+      answer: first_question.correct_answer
+      )
+
+      expect(quiz.first_unanswered_question(user)).to eq(nil)
+    end
+  end
 end

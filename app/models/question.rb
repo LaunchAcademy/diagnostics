@@ -25,5 +25,6 @@ class Question < ActiveRecord::Base
         return answer
       end
     end
+    nil
   end
 end
