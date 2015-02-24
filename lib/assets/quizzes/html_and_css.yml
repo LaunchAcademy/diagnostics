@@ -1,0 +1,78 @@
+"What was a precursor to HTML?":
+- "SGML"
+- "W3C"
+- "XML"
+- "CSS"
+
+"What browser is most likely to cause front end issues?":
+- "Internet Explorer"
+- "Safari"
+- "Chrome"
+- "Opera"
+
+"What belongs at the very top of an HTML document?":
+- "A doctype declaration"
+- "An <html> tag"
+- "A blank line"
+- "A <head> tag"
+
+"What is a reason for which the HTML standard does NOT exist":
+- "style"
+- "semantic structure"
+- "accessibility"
+- "cross browser compatibility"
+
+"The organization that oversees the HTML standard is":
+- "W3C"
+- "CERN"
+- "DARPA"
+- "IEEE"
+
+"The current, recommended HTML standard is:"
+- "HTML5"
+- "HTML4"
+- "HTML4 Transitional"
+- "XHTML"
+
+"Identify the inline element":
+- "<span>"
+- "<p>"
+- "<blockquote>"
+- "<li>"
+
+"You encounter an issue with the layout of your application. The first thing you should do is:":
+- "Validate the HTML"
+- "Validate the CSS"
+- "Check Chrome's Console"
+- "Properly indent your markup"
+
+"Identify the most specific CSS selector:"
+- "#foo"
+- ".foo"
+- "p.foo"
+- "p"
+
+"Identify the most specific CSS selector:"
+- "span.foo"
+- "p .foo"
+- ".foo"
+- "span"
+
+"The best way to apply styling to a document is:"
+- "utilizing a <link> tag"
+- "utilizing a <style> tag"
+- "utilizing an inline style attribute"
+- "using HTML attributes"
+
+"The CSS/Grid framework we recommend is:"
+- "Foundation"
+- "Bootstrap"
+- "Ember"
+- "Normalize"
+
+"Which css rule does NOT make the selected element(s) green?"
+- "color: #333;"
+- "color: green;"
+- "color: #300;"
+- "color: #330000;"
+
