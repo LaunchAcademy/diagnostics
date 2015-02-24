@@ -28,7 +28,7 @@
 - "DARPA"
 - "IEEE"
 
-"The current, recommended HTML standard is:"
+"The current, recommended HTML standard is:":
 - "HTML5"
 - "HTML4"
 - "HTML4 Transitional"
@@ -46,31 +46,31 @@
 - "Check Chrome's Console"
 - "Properly indent your markup"
 
-"Identify the most specific CSS selector:"
+"Identify the most specific CSS selector:":
 - "#foo"
 - ".foo"
 - "p.foo"
 - "p"
 
-"Identify the most specific CSS selector:"
+"Identify the most specific CSS selector:":
 - "span.foo"
 - "p .foo"
 - ".foo"
 - "span"
 
-"The best way to apply styling to a document is:"
+"The best way to apply styling to a document is:":
 - "utilizing a <link> tag"
 - "utilizing a <style> tag"
 - "utilizing an inline style attribute"
 - "using HTML attributes"
 
-"The CSS/Grid framework we recommend is:"
+"The CSS/Grid framework we recommend is:":
 - "Foundation"
 - "Bootstrap"
 - "Ember"
 - "Normalize"
 
-"Which css rule does NOT make the selected element(s) green?"
+"Which css rule does NOT make the selected element(s) green?":
 - "color: #333;"
 - "color: green;"
 - "color: #300;"
