@@ -73,6 +73,6 @@
 "Which css rule does NOT make the selected element(s) green?":
 - "color: #333;"
 - "color: green;"
-- "color: #300;"
-- "color: #330000;"
+- "color: #030;"
+- "color: #003300;"
 
