@@ -7,9 +7,9 @@ feature "Student is Redirected to Last Unanswered Question", %(
   So that I can avoid re-answering questions if I leave and come back.
 
   Acceptance Criteria:
-  * [] If a student has only partially completed a quiz, clicking the link to
-       complete the quiz should bring the student to the first question in the quiz
-       that they have not yet answered.
+  * [x] If a student has only partially completed a quiz, clicking the link to
+       complete the quiz should bring the student to the first question in the
+       quiz that they have not yet answered.
 ) do
 
   let(:user) { FactoryGirl.create(:user) }
@@ -20,11 +20,15 @@ feature "Student is Redirected to Last Unanswered Question", %(
   end
 
   let!(:second_question) do
-    FactoryGirl.create(:question_with_answers, quiz: quiz, query: "Second query")
+    FactoryGirl.create(:question_with_answers,
+      quiz: quiz,
+      query: "Second query")
   end
 
   scenario "student returns to unanswered quiz" do
-    ActionDispatch::Request.any_instance.stub(:remote_ip).and_return(ENV['LAUNCH_ACADEMY_IP'])
+    ActionDispatch::Request.any_instance.stub(:remote_ip).
+      and_return(ENV['LAUNCH_ACADEMY_IP'])
+
     sign_in(user)
     visit quiz_path(quiz)
     within(all('.new_answer_submission').first) { click_on 'X' }
