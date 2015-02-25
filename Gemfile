@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby "2.1.5"
 
+gem "airbrake"
 gem "coffee-rails", "~> 4.1.0"
 gem "foundation-rails"
 gem "jquery-rails"
