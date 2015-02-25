@@ -10,6 +10,9 @@ feature "Admin Views Attendance Page", %(
   * [x] I can see a list of present students on the current date.
   * [x] I would like to be able to fill in an alternate date to
        view attendence stats on a past date
+  * [] I can see the total number of students that are designated in attendance
+  * [] I can see the total number of students that are designated as absent
+  * [] The numbers should correlate with the number of names listed in each section.
 ) do
 
   scenario "admin views attendence page and sees active students" do
@@ -39,6 +42,36 @@ feature "Admin Views Attendance Page", %(
     within(".columns.medium-6:last-child") do
       expect(page).to have_content("Absent")
       expect(page).to have_content(student_name)
+    end
+  end
+
+  scenario "admin sees total number of active students" do
+    admin = FactoryGirl.create(:user, role: "admin")
+    FactoryGirl.create(:user_with_answered_quiz)
+    FactoryGirl.create(:user_with_answered_quiz)
+
+    sign_in(admin)
+
+    click_link 'View Attendance'
+
+    within(".columns.medium-6:first-child") do
+      expect(page).to have_content("Present")
+      expect(page).to have_content("Total: 2")
+    end
+  end
+
+  scenario "admin sees total number of active students" do
+    admin = FactoryGirl.create(:user, role: "admin")
+    FactoryGirl.create(:user)
+    FactoryGirl.create(:user)
+
+    sign_in(admin)
+
+    click_link 'View Attendance'
+
+    within(".columns.medium-6:last-child") do
+      expect(page).to have_content("Absent")
+      expect(page).to have_content("Total: 2")
     end
   end
 
