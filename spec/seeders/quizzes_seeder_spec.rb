@@ -28,7 +28,7 @@ RSpec.describe QuizzesSeeder do
     quizzes = Dir[Rails.root.join("lib/assets/quizzes/*.yml")]
 
     quizzes.each do |q|
-      expect(lambda{QuizzesSeeder.new(q).seed!}).to_not raise_error
+      expect(lambda { QuizzesSeeder.new(q).seed! }).to_not raise_error
     end
   end
 

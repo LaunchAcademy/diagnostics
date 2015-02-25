@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
     role == "admin"
   end
 
-  def is_present?(date=Date.current)
+  def present?(date=Date.current)
     AnswerSubmission.on_date(date).where(user: self).count > 0
   end
 

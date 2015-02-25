@@ -18,7 +18,7 @@ RSpec.describe AnswerSubmission, type: :model do
   end
 
   it "should raise an error if IP is in an invalid location" do
-  pending "turned this feature off except for when in production"
+    pending "turned this feature off except for when in production"
     answer = FactoryGirl.build(:answer_submission, ip: "10.0.0.256")
     answer.save
 

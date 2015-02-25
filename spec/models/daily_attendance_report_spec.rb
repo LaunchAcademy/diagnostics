@@ -1,13 +1,13 @@
 require 'spec_helper'
 
 describe DailyAttendanceReport do
-  let(:attendance_list) { DailyAttendanceReport.new() }
+  let(:attendance_list) { DailyAttendanceReport.new }
 
   describe '#students' do
     it 'only selects students, not admins' do
       student = FactoryGirl.create(:user)
       admin = FactoryGirl.create(:user, role: "admin")
-      attendance_list = DailyAttendanceReport.new()
+      attendance_list = DailyAttendanceReport.new
 
       expect(attendance_list.students).to include(student)
       expect(attendance_list.students).to_not include(admin)
@@ -18,14 +18,14 @@ describe DailyAttendanceReport do
     it 'selects students that have completed a quiz on the current day' do
       present_student = FactoryGirl.create(:user_with_answered_quiz)
 
-      attendance_list = DailyAttendanceReport.new()
+      attendance_list = DailyAttendanceReport.new
       expect(attendance_list.present_students).to include(present_student)
     end
 
     it 'does not select students that have not completed a quiz on the current day' do
       absent_student = FactoryGirl.create(:user)
 
-      attendance_list = DailyAttendanceReport.new()
+      attendance_list = DailyAttendanceReport.new
       expect(attendance_list.present_students).to_not include(absent_student)
     end
 
@@ -40,7 +40,7 @@ describe DailyAttendanceReport do
         created_at: 5.days.ago
       )
 
-      attendance_list = DailyAttendanceReport.new()
+      attendance_list = DailyAttendanceReport.new
       expect(attendance_list.present_students).to_not include(absent_student)
     end
   end
@@ -50,7 +50,7 @@ describe DailyAttendanceReport do
       present_student = FactoryGirl.create(:user_with_answered_quiz)
       absent_student = FactoryGirl.create(:user)
 
-      attendance_list = DailyAttendanceReport.new()
+      attendance_list = DailyAttendanceReport.new
       expect(attendance_list.absent_students).to include(absent_student)
       expect(attendance_list.absent_students).to_not include(present_student)
     end
