@@ -10,9 +10,9 @@ feature "Admin Views Attendance Page", %(
   * [x] I can see a list of present students on the current date.
   * [x] I would like to be able to fill in an alternate date to
        view attendence stats on a past date
-  * [] I can see the total number of students that are designated in attendance
-  * [] I can see the total number of students that are designated as absent
-  * [] The numbers should correlate with the number of names listed in each section.
+  * [x] I can see the total number of students that are designated in attendance
+  * [x] I can see the total number of students that are designated as absent
+  * [x] The numbers should correlate with the number of names listed in each section.
 ) do
 
   scenario "admin views attendence page and sees active students" do
