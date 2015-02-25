@@ -23,7 +23,7 @@ feature "Student is Redirected to Last Unanswered Question", %(
     FactoryGirl.create(:question_with_answers, quiz: quiz, query: "Second query")
   end
 
-  scenario "student returns to unanswered quiz", focus: true do
+  scenario "student returns to unanswered quiz" do
     ActionDispatch::Request.any_instance.stub(:remote_ip).and_return(ENV['LAUNCH_ACADEMY_IP'])
     sign_in(user)
     visit quiz_path(quiz)
