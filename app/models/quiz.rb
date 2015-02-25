@@ -23,4 +23,15 @@ class Quiz < ActiveRecord::Base
   def student_score(user)
     grades.find_by(user: user).try(:correct_count) || 0
   end
+
+  def first_unanswered_question(user)
+    last_question = nil
+    questions.each do |question|
+      if !question.student_answer(user)
+        last_question = question
+        break
+      end
+    end
+    last_question
+  end
 end
