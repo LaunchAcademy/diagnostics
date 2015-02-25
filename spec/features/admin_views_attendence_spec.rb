@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "Admin Views Attendance Page", %(
   As an instructor
-  I would like to see which students have been active at Launch on a specific day
+  I want to see which students have been active at Launch on a specific day
   So that I can take attendance.
 
   Acceptance Criteria:

@@ -13,7 +13,9 @@ feature "user starts a quiz" do
   end
 
   scenario "user answers a sequence of questions" do
-    ActionDispatch::Request.any_instance.stub(:remote_ip).and_return(ENV['LAUNCH_ACADEMY_IP'])
+    ActionDispatch::Request.any_instance.stub(:remote_ip).
+      and_return(ENV['LAUNCH_ACADEMY_IP'])
+
     sign_in(user)
     visit quiz_path(quiz)
     within(all('.new_answer_submission').first) { click_on 'X' }

@@ -1,6 +1,5 @@
 class DailyAttendanceReport
-
-  def initialize(date=Date.current)
+  def initialize(date = Date.current)
     @date = date
   end
 
@@ -12,7 +11,7 @@ class DailyAttendanceReport
     absent = []
 
     students.each do |student|
-      absent << student if !student.is_present?(@date)
+      absent << student if !student.present?(@date)
     end
 
     absent
@@ -22,10 +21,9 @@ class DailyAttendanceReport
     present = []
 
     students.each do |student|
-      present << student if student.is_present?(@date)
+      present << student if student.present?(@date)
     end
 
     present
   end
-
 end

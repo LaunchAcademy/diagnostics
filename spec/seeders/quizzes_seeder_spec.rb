@@ -23,4 +23,13 @@ RSpec.describe QuizzesSeeder do
     QuizzesSeeder.new(questions_yaml).seed!
     expect(Answer.count).to eq(initial_count)
   end
+
+  it "should not raise an error when loading quizzes" do
+    quizzes = Dir[Rails.root.join("lib/assets/quizzes/*.yml")]
+
+    quizzes.each do |q|
+      expect(lambda { QuizzesSeeder.new(q).seed! }).to_not raise_error
+    end
+  end
+
 end
