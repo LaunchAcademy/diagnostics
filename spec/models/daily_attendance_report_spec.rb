@@ -22,7 +22,7 @@ describe DailyAttendanceReport do
       expect(attendance_list.present_students).to include(present_student)
     end
 
-    it 'does not select students that have not completed a quiz on the current day' do
+    it 'does not select students that have not completed a quiz today' do
       absent_student = FactoryGirl.create(:user)
 
       attendance_list = DailyAttendanceReport.new
@@ -46,7 +46,7 @@ describe DailyAttendanceReport do
   end
 
   describe '#absent_students' do
-    it 'only selects students that have not answered a quiz on the current day' do
+    it 'only selects students that have not answered a quiz today' do
       present_student = FactoryGirl.create(:user_with_answered_quiz)
       absent_student = FactoryGirl.create(:user)
 

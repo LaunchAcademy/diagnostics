@@ -1,5 +1,5 @@
 class DailyAttendanceReport
-  def initialize(date=Date.current)
+  def initialize(date = Date.current)
     @date = date
   end
 

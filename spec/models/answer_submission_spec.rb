@@ -22,6 +22,7 @@ RSpec.describe AnswerSubmission, type: :model do
     answer = FactoryGirl.build(:answer_submission, ip: "10.0.0.256")
     answer.save
 
-    expect(answer.errors.full_messages).to include("Ip must be local to Launch Academy to answer a quiz.")
+    expect(answer.errors.full_messages).
+      to include("Ip must be local to Launch Academy to answer a quiz.")
   end
 end
