@@ -6,7 +6,7 @@ describe DailyAttendanceReport do
   describe '#students' do
     it 'only selects students, not admins' do
       student = FactoryGirl.create(:user)
-      admin = FactoryGirl.create(:user, role: "admin")
+      admin = FactoryGirl.create(:admin)
       attendance_list = DailyAttendanceReport.new
 
       expect(attendance_list.students).to include(student)

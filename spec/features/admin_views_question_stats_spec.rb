@@ -3,7 +3,7 @@ require "rails_helper"
 feature "admin views question stats" do
   context "user is admin" do
     scenario "admin views index with questions" do
-      admin = FactoryGirl.create(:user, role: "admin")
+      admin = FactoryGirl.create(:admin)
       question = FactoryGirl.create(:question)
 
       sign_in(admin)
