@@ -7,6 +7,10 @@ FactoryGirl.define do
     last_name "Smith"
     role "student"
 
+    factory :admin do
+      role "admin"
+    end
+
     factory :user_with_answered_quiz do
       after(:create) do |user|
         quiz = create(:quiz_with_questions)

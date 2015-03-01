@@ -14,6 +14,7 @@
   <div class="columns medium-6 present-students">
     <div class="panel">
       <h3>Present:</h3>
+      <h6>Total: <%= @present_students.count %></h6>
       <ul>
         <% @present_students.each do |student| %>
           <li><%= "#{student.first_name} #{student.last_name}" %></li>
@@ -22,9 +23,10 @@
     </div>
   </div>
 
-  <div class="columns medium-6 absent-studente">
+  <div class="columns medium-6 absent-students">
     <div class="panel">
       <h3>Absent:</h3>
+      <h6>Total: <%= @absent_students.count %></h6>
       <ul>
         <% @absent_students.each do |student| %>
         <li><%= "#{student.first_name} #{student.last_name}" %></li>
