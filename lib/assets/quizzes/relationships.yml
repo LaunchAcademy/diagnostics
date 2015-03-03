@@ -8,7 +8,7 @@
 - "false"
 
 "Consider the relationship 'A recipe has many ingredients'. Which table should store the foreign key?":
-- "recipes"
 - "ingredients"
+- "recipes"
 - "users"
 - "steps"
