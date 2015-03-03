@@ -1,0 +1,14 @@
+---
+"One of the benefits of a normalized database is that it eliminates duplicaiton.":
+- "true"
+- "false"
+
+"A flat database has only one table.":
+- "true"
+- "false"
+
+"Consider the relationship 'A recipe has many ingredients'. Which table should store the foreign key?":
+- "recipes"
+- "ingredients"
+- "users"
+- "steps"
