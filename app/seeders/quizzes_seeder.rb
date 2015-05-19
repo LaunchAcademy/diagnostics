@@ -10,7 +10,7 @@ class QuizzesSeeder
     Rails.logger.info "Creating #{quiz_name} quiz"
     quiz = Quiz.find_or_create_by!(name: quiz_name)
 
-    questions_data.each do |query, answers_data|
+    questions.each do |query, answers_data|
       Rails.logger.info "Creating question: #{query}"
       question = Question.find_or_create_by!(query: query)
       quiz.questions << question
@@ -23,7 +23,11 @@ class QuizzesSeeder
   end
 
   def quiz_name
-    File.basename(@yaml_file, ".yml").titleize
+    questions_data["name"]
+  end
+
+  def questions
+    questions_data["questions"]
   end
 
   private
