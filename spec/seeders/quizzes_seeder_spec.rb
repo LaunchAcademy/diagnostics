@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe QuizzesSeeder do
-  let(:questions_yaml) { "#{Rails.root}/lib/assets/quizzes/example_quiz.yml" }
+  let(:questions_yaml) { "#{Rails.root}/lib/assets/quizzes/http.yml" }
 
   it "should not create duplicate quizzes on multiple runs" do
     QuizzesSeeder.new(questions_yaml).seed!
