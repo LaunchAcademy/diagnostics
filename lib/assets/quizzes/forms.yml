@@ -1,0 +1,36 @@
+-"What HTTP method infers an operation that does not change anything on the server?":
+-- "GET"
+-- "POST"
+-- "PUT"
+-- "PATCH"
+-
+-"Supplied form data appears in":
+-- "The body of the HTTP request"
+-- "The body of the HTTP response"
+-- "The header of the HTTP request"
+-- "The header of the HTTP response"
+-
+-"Resuling HTML appears in":
+-- "The body of the HTTP response"
+-- "The body of the HTTP request"
+-- "The header of the HTTP request"
+-- "The header of the HTTP response"
+-
+-"Which of the following is NOT true about form data?":
+-- "Keys are based of of input id's"
+-- "It is submitted to the server as a string"
+-- "It is CGI encoded"
+-- "Key/Value Pairs are delimited by an ampersand (&)"
+-
+-"When should a form have GET as a value in the action attribute?"
+-- "When a user performs a search"
+-- "Adding an item to a shopping cart"
+-- "When a user provides credit card information"
+-- "When a user registers"
+-
+-"Which of these is NOT a valid form element?"
+-- "<radio>"
+-- "<input>"
+-- "<textarea>"
+-- "<select>"
+
