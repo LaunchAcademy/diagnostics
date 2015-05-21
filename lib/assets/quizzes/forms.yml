@@ -4,7 +4,7 @@
 -- "PUT"
 -- "PATCH"
 -
--"Supplied form data appears in":
+-"For HTTP POST operations, supplied form data appears in":
 -- "The body of the HTTP request"
 -- "The body of the HTTP response"
 -- "The header of the HTTP request"
