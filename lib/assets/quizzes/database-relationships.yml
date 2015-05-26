@@ -1,0 +1,20 @@
+---
+name: "Database Relationships"
+questions:
+  "One of the benefits of a normalized database is that it eliminates duplication.":
+  - "true"
+  - "false"
+
+  "A flat database has only one table.":
+  - "true"
+  - "false"
+
+  "Consider the relationship 'A recipe has many ingredients'. Which table should store the foreign key?":
+  - "ingredients"
+  - "recipes"
+  - "users"
+  - "steps"
+
+  "A join table is a table that stores the foreign keys of multiple tables and creates a many-to-many relationship.":
+  - "true"
+  - "false"
