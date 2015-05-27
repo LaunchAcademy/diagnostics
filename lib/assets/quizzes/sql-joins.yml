@@ -1,0 +1,34 @@
+---
+name: "SQL Joins"
+questions:
+  "A Join is a way to alter your database permanently by combining data from two tables into one.":
+  - "false"
+  - "true"
+
+  "Which of the following is not a valid sort of join?":
+  - "Left Cross Outer Join"
+  - "Inner Join"
+  - "Right Outer Join"
+  - "Full Outer Join"
+
+  "If I am writing an inner join of the Student and Instructor table which of the following is the correct syntax?":
+  - "SELECT * FROM Student INNER JOIN Instructor ON student.name = instructor.name;"
+  - "INNER JOIN Instructor.name ON student = instructor;"
+  - "SELECT * FROM Student FULL OUTER JOIN Instructor ON student.name = instructor.name;"
+  - "Student CROSS JOIN Instructor;"
+
+  "What is the term used to describe data that is spread across different tables?":
+  - "data normalization"
+  - "data spreading"
+  - "database design"
+  - "CRUD"
+
+  "What is the purpose of separating data into different tables and then joining them?":
+  - "Data normalization allows us to store a single piece of data only in one place."
+  - "There is no purpose this is considered bad database design."
+  - "To create more work for developers to keep them employed."
+  - "Databases will break if their data is not normalized."
+
+  "Can you do multiple joins?":
+  - "true"
+  - "false"
