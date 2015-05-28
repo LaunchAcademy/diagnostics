@@ -1,0 +1,39 @@
+---
+name: "SQL Indexes"
+questions:
+  "When you save a .rb file or even a Word document, it physically lives":
+  - "On a Hard Disk somewhere"
+  - "In Memory (RAM)"
+  - "In the Cloud"
+  - "In the CPU"
+
+  "What hardware works with the interpreter to compile your code so that it is machine friendly?":
+  - "The CPU"
+  - "Memory (RAM)"
+  - "The Hard Disk"
+  - "The Graphics Card"
+
+  "Which of these statements is true about database indexes":
+  - "It improves the speed of reading data, but degrades the speed of writing data"
+  - "It improves the speed of both reading and writing data"
+  - "It degrades the speed of both reading and writing data"
+  - "It improves the speed of writing data, but degrades the speed of reading data"
+
+  "In Unix based filesystems, the location of where file contents are stored is found in the":
+  - "inode"
+  - "FAT table"
+  - "boot partition"
+  - "RAM"
+
+  "Generally, one should always index the following items EXCEPT":
+  - "large text fields"
+  - "primary keys"
+  - "foreign keys"
+  - "commonly searched or sorted fields"
+
+  "Indexes utilize what data structure?":
+  - "binary tree"
+  - "linked list"
+  - "hash"
+  - "array of hashes"
+
