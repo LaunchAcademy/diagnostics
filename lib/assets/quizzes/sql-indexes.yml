@@ -13,11 +13,11 @@ questions:
   - "The Hard Disk"
   - "The Graphics Card"
 
-  "Which of these statements is true about database indexes":
-  - "It improves the speed of reading data, but degrades the speed of writing data"
-  - "It improves the speed of both reading and writing data"
-  - "It degrades the speed of both reading and writing data"
-  - "It improves the speed of writing data, but degrades the speed of reading data"
+  "Which of these statements is true about database indexes?":
+  - "It improves the speed of reading data, but degrades the speed of writing data."
+  - "It improves the speed of both reading and writing data."
+  - "It degrades the speed of both reading and writing data."
+  - "It improves the speed of writing data, but degrades the speed of reading data."
 
   "In Unix based filesystems, the location of where file contents are stored is found in the":
   - "inode"
@@ -31,7 +31,7 @@ questions:
   - "foreign keys"
   - "commonly searched or sorted fields"
 
-  "Indexes utilize what data structure?":
+  "Indexes utilize what data structure by default in Postgres?":
   - "binary tree"
   - "linked list"
   - "hash"
