@@ -1,30 +1,32 @@
 ---
 name: "Session Data & Authentication"
 questions:
-  "Which of the following is not a HTTP verb?":
-  - "CRUD"
-  - "GET"
-  - "POST"
-  - "PUT"
+  "What is an HTTP Cookie?":
+  - "Data included via HTTP headers in both the request and response"
+  - "A treat that you give your users when they are using the site well"
+  - "Something you save in an individual users browser"
+  - "Something the server saves in its database about an individual user"
 
-  "What does REST stand for?":
-  - "Representational State Transfer"
-  - "Reset"
-  - "Routing Ethernet Subliminal Transmissions"
-  - "Ruby Eastern Standard Time"
+  "How do we remember state about browser users?":
+  - "The browser session"
+  - "Browser cookies"
+  - "A database on the server"
+  - "HTTP remembers all"
 
-  "The C in CRUD stands for...":
-  - "Create"
-  - "Combine"
-  - "Constant"
-  - "Command"
+  "How do we encrypt sensitive data being sent/received by users?":
+  - "With a secret key that exists on the server"
+  - "With a password salt that is unguessable"
+  - "With a loud banner message to our users not to send sensitive data"
+  - "With a powerful network encryption key"
 
-  "HTTP status codes that start with 2xx are...":
-  - "Successful"
-  - "Informative"
-  - "Client Errors"
-  - "Server Errors"
+  "Which of the following is NOT a standard bit of user data saved in most web apps?":
+  - "credit card information"
+  - "username"
+  - "first, and last name information"
+  - "email"
 
-  "HTTP is a stateless protocol":
-  - "true"
-  - "false"
+  "How do we access the session in our sinatra app?":
+  - "session[:<variable name>]"
+  - "set a session variable after we `require “sinatra”`"
+  - "include the session data in every view we render"
+  - "{  “session” => {<hash with session data>}  }"
