@@ -1,0 +1,30 @@
+---
+name: "Session Data & Authentication"
+questions:
+  "Which of the following is not a HTTP verb?":
+  - "CRUD"
+  - "GET"
+  - "POST"
+  - "PUT"
+
+  "What does REST stand for?":
+  - "Representational State Transfer"
+  - "Reset"
+  - "Routing Ethernet Subliminal Transmissions"
+  - "Ruby Eastern Standard Time"
+
+  "The C in CRUD stands for...":
+  - "Create"
+  - "Combine"
+  - "Constant"
+  - "Command"
+
+  "HTTP status codes that start with 2xx are...":
+  - "Successful"
+  - "Informative"
+  - "Client Errors"
+  - "Server Errors"
+
+  "HTTP is a stateless protocol":
+  - "true"
+  - "false"
