@@ -1,0 +1,22 @@
+---
+name: "Introduction to OOP"
+questions:
+  "Objects encapsulate state and behavior.":
+  - "true"
+  - "false"
+
+  "How do we define an object in Ruby?":
+  - "With the `class` keyword."
+  - "With the `.new` method."
+  - "With the `.initialize` method"
+  - "Ruby automatically does this for us."
+
+  "How do we create an instance of an object?":
+  - "With the `.new` method."
+  - "With the `class` keyword."
+  - "With the `define` keyword."
+  - "Ruby automatically does this for us."
+
+  "A Ruby class is a template for creating objects.":
+  - "true"
+  - "false"
