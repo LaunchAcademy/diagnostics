@@ -1,0 +1,30 @@
+---
+name: "Class Methods"
+questions:
+  "When we invoke `new`, we are calling a:":
+  - "Class Method"
+  - "Instance Method"
+  - "Global Method"
+  - "Kernel Method"
+
+  "We commonly create class methods to perform everything below EXCEPT":
+  - "Change instance state"
+  - "Parse data into a meaningful version of an instance"
+  - "Fetch a collection of instances from the database"
+  - "Fetch a collection of instances from an API"
+
+  "The 'builder' is an example of:":
+  - "Design Patterns"
+  - "Instance Methods"
+  - "Inheritance"
+  - "Composition"
+
+  "Design Patterns give us everything below EXCEPT:":
+  - "Robust, prescriptive implementation details for specific problem domains"
+  - "A way in which to communicate with other developers"
+  - "Abstract starting points for architecture"
+  - "A set of commonly used tools that other developers have utilized"
+
+  "There are two ways to define class methods":
+  - "true"
+  - "false"
