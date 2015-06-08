@@ -1,0 +1,42 @@
+---
+name: "Multiple Classes/Composition"
+questions:
+  "When we compose objects, we are":
+  - "splitting functionality into small, testable objects."
+  - "creating lots of methods on one large object."
+  - "inheriting functionality from parent objects."
+  - "sharing methods using a module."
+
+  "Which of these is not a benefit of smaller objects?":
+  - "Easier to Hide Functionality"
+  - "Easier to Test"
+  - "More Readable Code"
+  - "Easier to Debug"
+
+  "Decomposition refers to":
+  - "breaking down large methods/objects into smaller methods/objects."
+  - "deleting tests you no longer need."
+  - "naming objects/methods carefully."
+  - "code changing functionality over time."
+
+  "Private methods can be accessed by outside contexts.":
+  - "false"
+  - "true"
+
+  "Pseudocode is":
+  - "a plain-english understanding of what code needs to do without worrying about syntax."
+  - "a language written in the early 2000's to help us debug."
+  - "a subset of ruby written using a DSL."
+  - "what you code when you hope no one is looking."
+
+  "When writing our unit tests, we should be primarily testing":
+  - "public interfaces of our classes."
+  - "initial setup of our classes."
+  - "how classes interact with each other."
+  - "the basic ruby methods (#to_s, #to_i, etc)."
+
+  "Objects can be best named as a series of":
+  - "nouns, verbs, and adjectives."
+  - "1980's Movie references."
+  - "metaphors for work."
+  - "whatever the programmer feels like."
