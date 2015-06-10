@@ -1,0 +1,34 @@
+---
+name: "Acceptance Testing"
+questions:
+   "Acceptance testing libraries (like capybara) look to simulate...":
+   - "A user using the browser"
+   - "The database running migrations"
+   - "The user running the command line"
+   - "The developer fixing a bug"
+
+   "Which of the following is not used in acceptance testing an application?":
+   - "Inheritance"
+   - "The Database"
+   - "Views"
+   - "the Server"
+
+   "Unit tests are for testing small bits of functionality local to a single class.":
+   - "true"
+   - "false"
+
+   "Acceptance tests are good at testing the outcome of many classes collaborating.":
+   - "true"
+   - "false"
+
+   "Which of the following is not synonymous with 'Acceptance' tests?":
+   - "Unit Tests"
+   - "Integration Tests"
+   - "Feature Tests"
+   - "Fullstack tests"
+
+   "Stories help us write code by":
+   - "defining the full context of the code we want to test."
+   - "inspiring us to do better."
+   - "giving us creative names for our tests."
+   - "giving us helpful practice for thinking like a user."
