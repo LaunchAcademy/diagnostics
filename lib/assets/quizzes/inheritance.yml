@@ -1,34 +1,34 @@
 ---
 name: "Inheritance"
 questions:
- "The ____ class inherits from the ____ class":
- - "child, parent"
- - "mother, child"
- - "super, foo"
- - "reader, writer"
+  "The ____ class inherits from the ____ class":
+  - "child, parent"
+  - "mother, child"
+  - "super, foo"
+  - "reader, writer"
 
- "What do Parent classes *not* share with their subclasses?":
- - "naming convention"
- - "public methods"
- - "private methods"
- - "constants"
+  "What do Parent classes *not* share with their subclasses?":
+  - "naming convention"
+  - "public methods"
+  - "private methods"
+  - "constants"
 
- "We can use the `super` method to":
- - "chain functionality from parent methods."
- - "print variables twice."
- - "ignore parent methods."
- - "steal functionality from child methods."
+  "We can use the `super` method to":
+  - "chain functionality from parent methods."
+  - "print variables twice."
+  - "ignore parent methods."
+  - "steal functionality from child methods."
 
- "Child methods with the same method signature as methods on the parent overwrite those methods for the child class?":
- - "true"
- - "false"
+  "Child methods with the same method signature as methods on the parent overwrite those methods for the child class?":
+  - "true"
+  - "false"
 
- "Inheritance is very useful for subclassing from:":
- - "External Libraries"
- - "Psuedo Code"
- - "Feature Tests"
- - "Child Classes"
+  "Inheritance is very useful for subclassing from:":
+  - "External Libraries"
+  - "Psuedo Code"
+  - "Feature Tests"
+  - "Child Classes"
 
- "Inhertiance is exclusive to Ruby":
- - "false"
- - "true"
+  "Inhertiance is exclusive to Ruby":
+  - "false"
+  - "true"
