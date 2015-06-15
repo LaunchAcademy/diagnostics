@@ -2,8 +2,8 @@
 name: "Javascript Introduction"
 questions:
    "Microsoft created JavaScript.":
-   - "true"
    - "false"
+   - "true"
 
    "Global variables need to be prepended with the 'var' keyword.":
    - "false"
