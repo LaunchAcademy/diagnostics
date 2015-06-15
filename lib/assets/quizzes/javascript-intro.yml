@@ -1,0 +1,26 @@
+---
+name: "Javascript Introduction"
+questions:
+   "Microsoft created JavaScript.":
+   - "true"
+   - "false"
+
+   "Global variables need to be prepended with the 'var' keyword.":
+   - "false"
+   - "true"
+
+   "Which of the following is a JavaScript framework?":
+   - "All of the Above"
+   - "Ember"
+   - "Angular"
+   - "Backbone"
+
+   "Javascript functions need to have names.":
+   - "false"
+   - "true"
+
+   "If a function had a single line console.log('Hello'), which of the following would it be considered?":
+   - "Side Effect"
+   - "Return Value"
+   - "Local Variable"
+   - "Global Variable"
