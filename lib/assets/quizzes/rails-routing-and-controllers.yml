@@ -1,0 +1,20 @@
+---
+name: "Rails Routing and Controllers"
+questions:
+  "Rails uses the MVC pattern, which stands for":
+  - "Model, View, Controller"
+  - "Monad, Viewscreen, Comptroller"
+  - "Mother, Viceroy, Child"
+  - "Monad, View, Controlling"
+
+  "A route takes a ___ and matches it to a ___":
+  - "URL pattern / Controller Action"
+  - "Controller Action / View Helper"
+  - "URL Pattern / Sinatra Block"
+  - "Knee Bone / Thigh Bone"
+
+  "Which of the following controller actions do not represent a GET request?":
+  - "create"
+  - "new"
+  - "edit"
+  - "index"
