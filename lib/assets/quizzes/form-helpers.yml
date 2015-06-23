@@ -1,0 +1,20 @@
+---
+name: "Form Helpers"
+questions:
+  "How do we check which routes we have available in a Rails app?":
+  - "rake routes"
+  - "rake db:create"
+  - "rake db:migrate"
+  - "rake db:test:prepare"
+
+  "What does the form_for helper do?":
+  - "It generates the html for a form."
+  - "It creates a new route in your app."
+  - "It automatically fills out forms for you."
+  - "It builds a rails app for you."
+
+  "Which of the following is not a method of the ActionView::Helpers::FormHelper module?":
+  - "hypertext_field"
+  - "hidden_field"
+  - "label"
+  - "email_field"
